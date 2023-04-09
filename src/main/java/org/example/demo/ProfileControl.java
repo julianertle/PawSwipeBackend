@@ -5,16 +5,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/profiles")
+@RequestMapping("/profile")
 public class ProfileControl {
 
     @Autowired
     private ProfileRepository profileRepository;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Void> createProfile(@RequestBody Profile profile) {
         profileRepository.save(profile);
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -29,6 +31,15 @@ public class ProfileControl {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/all/ids")
+    public ResponseEntity<List<Integer>> getProfileIds() {
+        List<Profile> profiles = profileRepository.findAll();
+        List<Integer> ids = profiles.stream().map(Profile::getProfileId).collect(Collectors.toList());
+        return ResponseEntity.ok(ids);
+    }
+
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProfile(@PathVariable("id") int id) {
