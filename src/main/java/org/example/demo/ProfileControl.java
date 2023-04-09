@@ -23,14 +23,15 @@ public class ProfileControl {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Profile> getProfile(@PathVariable("id") int id) {
-        Optional<Profile> profileOptional = profileRepository.findById((long) id);
+    public ResponseEntity<Profile> getProfile(@PathVariable("id") Integer id) {
+        Optional<Profile> profileOptional = profileRepository.findById(id);
         if (profileOptional.isPresent()) {
             return ResponseEntity.ok(profileOptional.get());
         } else {
             return ResponseEntity.notFound().build();
         }
     }
+
 
     @GetMapping("/all/ids")
     public ResponseEntity<List<Integer>> getProfileIds() {
@@ -39,11 +40,9 @@ public class ProfileControl {
         return ResponseEntity.ok(ids);
     }
 
-
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProfile(@PathVariable("id") int id) {
-        Optional<Profile> profileOptional = profileRepository.findById((long) id);
+        Optional<Profile> profileOptional = profileRepository.findById(id);
         if (profileOptional.isPresent()) {
             profileRepository.delete(profileOptional.get());
             return ResponseEntity.ok().build();

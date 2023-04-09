@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Profile.java updates">
+    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Get all ids of existing profiles method added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileControl.java" afterDir="false" />
     </list>
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681075866320</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Get all ids of existing profiles method added">
+      <created>1681080274744</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681080274744</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +174,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Rollback here" />
     <MESSAGE value="Started Locally niceeee" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started Locally niceeee" />
+    <MESSAGE value="Get all ids of existing profiles method added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get all ids of existing profiles method added" />
   </component>
 </project>
