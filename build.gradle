@@ -6,6 +6,10 @@ plugins {
 
 }
 
+bootJar {
+	mainClassName = 'com.example.demo.Application' // replace with your main class name
+}
+
 group = 'org.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 11
