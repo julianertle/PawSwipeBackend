@@ -2,15 +2,17 @@ package org.example.demo;
 
 import java.time.LocalDateTime;
 
-public class ErrorResponse {
+public class ErrorResponse  {
     private int status;
     private String error;
     private String message;
+    private String exceptionMessage;
 
-    public ErrorResponse(int status, String error, String message) {
+    public ErrorResponse(int status, String error, String message, String exceptionMessage) {
         this.status = status;
         this.error = error;
         this.message = message;
+        this.exceptionMessage = exceptionMessage;
     }
 
     public int getStatus() {
@@ -36,4 +38,13 @@ public class ErrorResponse {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public String getExceptionMessage() {
+        return exceptionMessage;
+    }
+
+    public void setExceptionMessage(String exceptionMessage) {
+        this.exceptionMessage = exceptionMessage;
+    }
 }
+

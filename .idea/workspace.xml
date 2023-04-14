@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Get profile from id workds">
+    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Working Server API version">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/AnimalRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/AnimalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/AnimalServiceException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ExceptionHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ExceptionHandlerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -52,7 +59,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;10022a9b4c18cb8f78cffb548ebd142e&quot;
+    &quot;spring.configuration.checksum&quot;: &quot;9de0862494cc3aa211be7c76dc6b547b&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -71,7 +78,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DemoApplication">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="TestJar" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="org.example.demo.Application" />
       <module name="demo.main" />
@@ -147,6 +154,12 @@
       <updated>1681071422166</updated>
       <workItem from="1681071423367" duration="202000" />
       <workItem from="1681115940537" duration="3688000" />
+      <workItem from="1681149766025" duration="1589000" />
+      <workItem from="1681158544612" duration="1089000" />
+      <workItem from="1681252973221" duration="599000" />
+      <workItem from="1681386914061" duration="4826000" />
+      <workItem from="1681392527612" duration="2256000" />
+      <workItem from="1681468237394" duration="7226000" />
     </task>
     <task id="LOCAL-00001" summary="Started Locally niceeee">
       <created>1681075866320</created>
@@ -169,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681081255315</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Working Server API version">
+      <created>1681131169334</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681131169334</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +211,7 @@
     <MESSAGE value="Started Locally niceeee" />
     <MESSAGE value="Get all ids of existing profiles method added" />
     <MESSAGE value="Get profile from id workds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get profile from id workds" />
+    <MESSAGE value="Working Server API version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Server API version" />
   </component>
 </project>
