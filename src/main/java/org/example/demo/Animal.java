@@ -3,7 +3,6 @@ package org.example.demo;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
