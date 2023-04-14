@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Working Server API version">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/AnimalRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/AnimalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/AnimalServiceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ErrorResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ExceptionHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ExceptionHandlerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Added AnimalService" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +149,7 @@
       <workItem from="1681252973221" duration="599000" />
       <workItem from="1681386914061" duration="4826000" />
       <workItem from="1681392527612" duration="2256000" />
-      <workItem from="1681468237394" duration="7226000" />
+      <workItem from="1681468237394" duration="7552000" />
     </task>
     <task id="LOCAL-00001" summary="Started Locally niceeee">
       <created>1681075866320</created>
@@ -189,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681131169334</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added AnimalService">
+      <created>1681475803398</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681475803398</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,6 +209,7 @@
     <MESSAGE value="Get all ids of existing profiles method added" />
     <MESSAGE value="Get profile from id workds" />
     <MESSAGE value="Working Server API version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working Server API version" />
+    <MESSAGE value="Added AnimalService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AnimalService" />
   </component>
 </project>
