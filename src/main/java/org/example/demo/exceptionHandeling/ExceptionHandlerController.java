@@ -1,4 +1,4 @@
-package org.example.demo.ExceptionHandeling;
+package org.example.demo.exceptionHandeling;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package org.example.demo.ExceptionHandeling;
+package org.example.demo.exceptionHandeling;
 
 public class AnimalServiceException extends RuntimeException {
     public AnimalServiceException(String message) {
