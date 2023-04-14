@@ -1,4 +1,4 @@
-package org.example.demo;
+package org.example.demo.ExceptionHandeling;
 
 public class ErrorResponse  {
     private int status;
