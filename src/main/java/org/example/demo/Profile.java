@@ -10,18 +10,18 @@ public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "profile_id")
-    private int profileId;
+    @Column(name = "profileid")
+    private int profileid;
 
     @Column(name = "username")
     private String username;
 
-    public int getProfileId() {
-        return profileId;
+    public int getProfileid() {
+        return profileid;
     }
 
-    public void setProfileId(int profileId) {
-        this.profileId = profileId;
+    public void setProfileid(int profileid) {
+        this.profileid = profileid;
     }
 
     public String getUsername() {
@@ -32,12 +32,28 @@ public class Profile {
         this.username = username;
     }
 
-    public byte[] getProfilePicture() {
-        return profilePicture;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setProfilePicture(byte[] profilePicture) {
-        this.profilePicture = profilePicture;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public byte[] getProfilepicture() {
+        return profilepicture;
+    }
+
+    public void setProfilepicture(byte[] profilepicture) {
+        this.profilepicture = profilepicture;
     }
 
     public String getDescription() {
@@ -56,60 +72,20 @@ public class Profile {
         this.password = password;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public Date getCreationdate() {
+        return creationdate;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setCreationdate(Date creationdate) {
+        this.creationdate = creationdate;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Boolean getComplete() {
-        return isComplete;
-    }
-
-    public void setComplete(Boolean complete) {
-        isComplete = complete;
-    }
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getOpeningHours() {
-        return openingHours;
-    }
-
-    public void setOpeningHours(String openingHours) {
-        this.openingHours = openingHours;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public String getCountry() {
@@ -120,6 +96,14 @@ public class Profile {
         this.country = country;
     }
 
+    public String getPostalcode() {
+        return postalcode;
+    }
+
+    public void setPostalcode(String postalcode) {
+        this.postalcode = postalcode;
+    }
+
     public String getCity() {
         return city;
     }
@@ -128,12 +112,36 @@ public class Profile {
         this.city = city;
     }
 
-    public int getStreetNumber() {
-        return streetNumber;
+    public String getStreet() {
+        return street;
     }
 
-    public void setStreetNumber(int streetNumber) {
-        this.streetNumber = streetNumber;
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getStreetnumber() {
+        return streetnumber;
+    }
+
+    public void setStreetnumber(String streetnumber) {
+        this.streetnumber = streetnumber;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getOpeninghours() {
+        return openinghours;
+    }
+
+    public void setOpeninghours(String openinghours) {
+        this.openinghours = openinghours;
     }
 
     public String getHomepage() {
@@ -144,14 +152,6 @@ public class Profile {
         this.homepage = homepage;
     }
 
-    public int getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
-    }
-
     public String getDiscriminator() {
         return discriminator;
     }
@@ -160,8 +160,22 @@ public class Profile {
         this.discriminator = discriminator;
     }
 
-    @Column(name = "profile_picture")
-    private byte[] profilePicture;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Column(name = "firstname")
+    private String firstname;
+
+    @Column(name = "lastname")
+    private String lastname;
+
+    @Column(name = "profilepicture")
+    private byte[] profilepicture;
 
     @Column(name = "description")
     private String description;
@@ -169,67 +183,66 @@ public class Profile {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "creation_date")
-    private Date creationDate;
+    @Column(name = "creationdate")
+    private Date creationdate;
 
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "is_complete")
-    private Boolean isComplete;
-
-    @Column(name = "birthday")
-    private Date birthday;
-
-    @Column(name = "phone_number")
-    private String phoneNumber;
-
-    @Column(name = "opening_hours")
-    private String openingHours;
-
-    @Column(name = "street")
-    private String street;
+    @Column(name = "phonenumber")
+    private String phonenumber;
 
     @Column(name = "country")
     private String country;
 
+    @Column(name = "postalcode")
+    private String postalcode;
+
     @Column(name = "city")
     private String city;
 
-    @Column(name = "street_number")
-    private int streetNumber;
+    @Column(name = "street")
+    private String street;
+
+    @Column(name = "streetnumber")
+    private String streetnumber;
+
+    @Column(name = "birthday")
+    private Date birthday;
+
+    @Column(name = "openinghours")
+    private String openinghours;
 
     @Column(name = "homepage")
     private String homepage;
 
-    @Column(name = "postal_code")
-    private int postalCode;
-
-    @Column(name = "discriminator", insertable = false, updatable = false)
+    @Column(name = "discriminator")
     private String discriminator;
+
+    @Column(name = "email")
+    private String email;
 
     // Constructors
     public Profile() {
     }
 
-    public Profile(String username, byte[] profilePicture, String description, String password, Date creationDate,
-                   String email, Boolean isComplete, Date birthday, String phoneNumber, String openingHours,
-                   String street, String country, String city, int streetNumber, String homepage, int postalCode) {
+    public Profile(String username, byte[] profilepicture, String description, String password, Date creationdate,
+                   String phonenumber, String country, String postalcode, String city, String street,
+                   String streetnumber, Date birthday, String openinghours, String homepage, String discriminator,
+                   String email) {
         this.username = username;
-        this.profilePicture = profilePicture;
+        this.profilepicture = profilepicture;
         this.description = description;
         this.password = password;
-        this.creationDate = creationDate;
-        this.email = email;
-        this.isComplete = isComplete;
-        this.birthday = birthday;
-        this.phoneNumber = phoneNumber;
-        this.openingHours = openingHours;
-        this.street = street;
+        this.creationdate = creationdate;
+        this.phonenumber = phonenumber;
         this.country = country;
+        this.postalcode = postalcode;
         this.city = city;
-        this.streetNumber = streetNumber;
+        this.street = street;
+        this.streetnumber = streetnumber;
+        this.birthday = birthday;
+        this.openinghours = openinghours;
         this.homepage = homepage;
-        this.postalCode = postalCode;
+        this.discriminator = discriminator;
+        this.email = email;
     }
+
 }

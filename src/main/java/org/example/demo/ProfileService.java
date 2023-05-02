@@ -29,73 +29,80 @@ public class ProfileService {
     @PutMapping("/update/{id}")
     public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") int id, @RequestBody Map<String, Object> updates) {
 
-            Profile existingProfile = profileRepository.getById(id);
+        Optional<Profile> existingProfileOptional = profileRepository.findById(id);
+        if (!existingProfileOptional.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+        Profile existingProfile = existingProfileOptional.get();
 
-            // Update each field that was specified in the request body
-            for (Map.Entry<String, Object> entry : updates.entrySet()) {
-                String key = entry.getKey();
-                Object value = entry.getValue();
-                switch (key) {
-                    case "username":
-                        existingProfile.setUsername((String) value);
-                        break;
-                    case "profile_picture":
-                        existingProfile.setProfilePicture((byte[]) value);
-                        break;
-                    case "description":
-                        existingProfile.setDescription((String) value);
-                        break;
-                    case "password":
-                        existingProfile.setPassword((String) value);
-                        break;
-                    case "creation_date":
-                        existingProfile.setCreationDate((Date) value);
-                        break;
-                    case "email":
-                        existingProfile.setEmail((String) value);
-                        break;
-                    case "is_complete":
-                        existingProfile.setComplete((Boolean) value);
-                        break;
-                    case "birthday":
-                        existingProfile.setBirthday((Date) value);
-                        break;
-                    case "phone_number":
-                        existingProfile.setPhoneNumber((String) value);
-                        break;
-                    case "opening_hours":
-                        existingProfile.setOpeningHours((String) value);
-                        break;
-                    case "street":
-                        existingProfile.setStreet((String) value);
-                        break;
-                    case "country":
-                        existingProfile.setCountry((String) value);
-                        break;
-                    case "city":
-                        existingProfile.setCity((String) value);
-                        break;
-                    case "street_number":
-                        existingProfile.setStreetNumber((Integer) value);
-                        break;
-                    case "homepage":
-                        existingProfile.setHomepage((String) value);
-                        break;
-                    case "postal_code":
-                        existingProfile.setPostalCode((Integer) value);
-                        break;
-                    case "discriminator":
-                        existingProfile.setDiscriminator((String) value);
-                        break;
-                    default:
-                        // Ignore any unknown fields
-                        break;
-                }
+        // Update each field that was specified in the request body
+        for (Map.Entry<String, Object> entry : updates.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            switch (key) {
+                case "username":
+                    existingProfile.setUsername((String) value);
+                    break;
+                case "firstname":
+                    existingProfile.setFirstName((String) value);
+                    break;
+                case "lastname":
+                    existingProfile.setLastName((String) value);
+                    break;
+                case "profilepicture":
+                    existingProfile.setProfilePicture((byte[]) value);
+                    break;
+                case "description":
+                    existingProfile.setDescription((String) value);
+                    break;
+                case "password":
+                    existingProfile.setPassword((String) value);
+                    break;
+                case "creationdate":
+                    existingProfile.setCreationDate((Date) value);
+                    break;
+                case "phonenumber":
+                    existingProfile.setPhoneNumber((String) value);
+                    break;
+                case "country":
+                    existingProfile.setCountry((String) value);
+                    break;
+                case "postalcode":
+                    existingProfile.setPostalCode((String) value);
+                    break;
+                case "city":
+                    existingProfile.setCity((String) value);
+                    break;
+                case "street":
+                    existingProfile.setStreet((String) value);
+                    break;
+                case "streetnumber":
+                    existingProfile.setStreetNumber((String) value);
+                    break;
+                case "birthday":
+                    existingProfile.setBirthday((Date) value);
+                    break;
+                case "openinghours":
+                    existingProfile.setOpeningHours((String) value);
+                    break;
+                case "homepage":
+                    existingProfile.setHomepage((String) value);
+                    break;
+                case "discriminator":
+                    existingProfile.setDiscriminator((String) value);
+                    break;
+                case "email":
+                    existingProfile.setEmail((String) value);
+                    break;
+                default:
+                    // Ignore any unknown fields
+                    break;
             }
+        }
 
-            // Save the updated profile and return it in the response
-            Profile updatedProfile = profileRepository.save(existingProfile);
-            return ResponseEntity.ok(updatedProfile);
+        // Save the updated profile and return it in the response
+        Profile updatedProfile = profileRepository.save(existingProfile);
+        return ResponseEntity.ok(updatedProfile);
     }
 
 
