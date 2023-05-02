@@ -1,6 +1,4 @@
-package org.example.demo;
-
-import java.time.LocalDateTime;
+package org.example.demo.exceptionHandeling;
 
 public class ErrorResponse  {
     private int status;

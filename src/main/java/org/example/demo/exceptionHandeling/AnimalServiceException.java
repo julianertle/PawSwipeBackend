@@ -1,6 +1,4 @@
-package org.example.demo;
-
-import java.sql.SQLException;
+package org.example.demo.exceptionHandeling;
 
 public class AnimalServiceException extends RuntimeException {
     public AnimalServiceException(String message) {
