@@ -12,11 +12,11 @@ public class Animal {
     @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "animal_id")
+    @Column(name = "animalid")
     private int animalId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "profile_id", referencedColumnName = "profile_id", nullable = false)
+    @JoinColumn(name = "profileid", referencedColumnName = "profileid", nullable = false)
     private Profile profile;
 
     @Column(name = "species", length = 50)

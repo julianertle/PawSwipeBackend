@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Changed for local test purpose">
+    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Updated Profile.java and ProfileService.java but has some errors still">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/exceptionHandeling/ExceptionHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/exceptionHandeling/ExceptionHandlerController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +169,8 @@
       <workItem from="1681392527612" duration="2256000" />
       <workItem from="1681468237394" duration="14008000" />
       <workItem from="1681727050164" duration="636000" />
-      <workItem from="1683060347221" duration="2278000" />
+      <workItem from="1683060347221" duration="5706000" />
+      <workItem from="1683066968881" duration="5902000" />
     </task>
     <task id="LOCAL-00001" summary="Started Locally niceeee">
       <created>1681075866320</created>
@@ -247,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681482964178</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Updated Profile.java and ProfileService.java but has some errors still">
+      <created>1683062907846</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683062907846</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,6 +285,18 @@
     <MESSAGE value="Added update method to ProfileService" />
     <MESSAGE value="Made it accessible for the Server" />
     <MESSAGE value="Changed for local test purpose" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed for local test purpose" />
+    <MESSAGE value="Updated Profile.java and ProfileService.java but has some errors still" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Profile.java and ProfileService.java but has some errors still" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

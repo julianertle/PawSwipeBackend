@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 @RestControllerAdvice
 public class ExceptionHandlerController {
-
+/**
     @ExceptionHandler(SQLException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorResponse handleSQLException(SQLException ex) {
@@ -41,6 +41,6 @@ public class ExceptionHandlerController {
                 ex.getMessage()
         );
     }
-
+*/
 }
 

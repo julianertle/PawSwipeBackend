@@ -8,165 +8,89 @@ import java.sql.Date;
 @DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "profileid")
-    private int profileid;
-
-    @Column(name = "username")
-    private String username;
-
-    public int getProfileid() {
-        return profileid;
-    }
-
-    public void setProfileid(int profileid) {
-        this.profileid = profileid;
-    }
-
-    public String getUsername() {
-        return username;
+    public int getProfileId() {
+        return profileId;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
+    public void setFirstName(String firstname) {
         this.firstname = firstname;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
+    public void setLastName(String lastname) {
         this.lastname = lastname;
     }
 
-    public byte[] getProfilepicture() {
-        return profilepicture;
-    }
-
-    public void setProfilepicture(byte[] profilepicture) {
-        this.profilepicture = profilepicture;
-    }
-
-    public String getDescription() {
-        return description;
+    public void setProfilePicture(byte[] profilepicture) {
+        this.profilePicture = profilepicture;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public Date getCreationdate() {
-        return creationdate;
-    }
-
-    public void setCreationdate(Date creationdate) {
+    public void setCreationDate(Date creationdate) {
         this.creationdate = creationdate;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(String phonenumber) {
+    public void setPhoneNumber(String phonenumber) {
         this.phonenumber = phonenumber;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
     }
 
-    public String getPostalcode() {
-        return postalcode;
-    }
-
-    public void setPostalcode(String postalcode) {
+    public void setPostalCode(String postalcode) {
         this.postalcode = postalcode;
-    }
-
-    public String getCity() {
-        return city;
     }
 
     public void setCity(String city) {
         this.city = city;
     }
 
-    public String getStreet() {
-        return street;
-    }
-
     public void setStreet(String street) {
         this.street = street;
     }
 
-    public String getStreetnumber() {
-        return streetnumber;
-    }
-
-    public void setStreetnumber(String streetnumber) {
+    public void setStreetNumber(String streetnumber) {
         this.streetnumber = streetnumber;
-    }
-
-    public Date getBirthday() {
-        return birthday;
     }
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
-    public String getOpeninghours() {
-        return openinghours;
-    }
-
-    public void setOpeninghours(String openinghours) {
+    public void setOpeningHours(String openinghours) {
         this.openinghours = openinghours;
-    }
-
-    public String getHomepage() {
-        return homepage;
     }
 
     public void setHomepage(String homepage) {
         this.homepage = homepage;
     }
 
-    public String getDiscriminator() {
-        return discriminator;
-    }
-
     public void setDiscriminator(String discriminator) {
         this.discriminator = discriminator;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "profileid")
+    private int profileId;
+
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "firstname")
     private String firstname;
@@ -175,7 +99,7 @@ public class Profile {
     private String lastname;
 
     @Column(name = "profilepicture")
-    private byte[] profilepicture;
+    private byte[] profilePicture;
 
     @Column(name = "description")
     private String description;
@@ -223,12 +147,12 @@ public class Profile {
     public Profile() {
     }
 
-    public Profile(String username, byte[] profilepicture, String description, String password, Date creationdate,
-                   String phonenumber, String country, String postalcode, String city, String street,
-                   String streetnumber, Date birthday, String openinghours, String homepage, String discriminator,
-                   String email) {
+    public Profile(int profileId, String username, String firstname, String lastname, byte[] profilePicture, String description, String password, Date creationdate, String phonenumber, String country, String postalcode, String city, String street, String streetnumber, Date birthday, String openinghours, String homepage, String discriminator, String email) {
+        this.profileId = profileId;
         this.username = username;
-        this.profilepicture = profilepicture;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.profilePicture = profilePicture;
         this.description = description;
         this.password = password;
         this.creationdate = creationdate;
