@@ -55,7 +55,7 @@ public class ProfileService {
                         existingProfile.setEmail((String) value);
                         break;
                     case "is_complete":
-                        existingProfile.setComplete((Boolean) value);
+                        existingProfile.setComplete((int) value);
                         break;
                     case "birthday":
                         existingProfile.setBirthday((Date) value);

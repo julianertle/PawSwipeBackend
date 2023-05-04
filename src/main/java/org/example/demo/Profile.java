@@ -72,11 +72,11 @@ public class Profile {
         this.email = email;
     }
 
-    public Boolean getComplete() {
+    public int getComplete() {
         return isComplete;
     }
 
-    public void setComplete(Boolean complete) {
+    public void setComplete(int complete) {
         isComplete = complete;
     }
 
@@ -160,6 +160,28 @@ public class Profile {
         this.discriminator = discriminator;
     }
 
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    @Column(name = "firstname")
+    private String firstname;
+
+    @Column(name = "lastname")
+    private String lastname;
+
     @Column(name = "profile_picture")
     private byte[] profilePicture;
 
@@ -176,7 +198,7 @@ public class Profile {
     private String email;
 
     @Column(name = "is_complete")
-    private Boolean isComplete;
+    private int isComplete;
 
     @Column(name = "birthday")
     private Date birthday;
@@ -213,8 +235,8 @@ public class Profile {
     }
 
     public Profile(String username, byte[] profilePicture, String description, String password, Date creationDate,
-                   String email, Boolean isComplete, Date birthday, String phoneNumber, String openingHours,
-                   String street, String country, String city, int streetNumber, String homepage, int postalCode) {
+                   String email, int isComplete, Date birthday, String phoneNumber, String openingHours,
+                   String street, String country, String city, int streetNumber, String homepage, int postalCode, String firstname, String lastname) {
         this.username = username;
         this.profilePicture = profilePicture;
         this.description = description;
@@ -231,5 +253,7 @@ public class Profile {
         this.streetNumber = streetNumber;
         this.homepage = homepage;
         this.postalCode = postalCode;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 }
