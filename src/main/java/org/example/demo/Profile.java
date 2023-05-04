@@ -162,7 +162,7 @@ public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "profile_id")
+    @Column(name = "profile_id",unique = true)
     private int profileId;
 
     @Column(name = "username", nullable = false)
@@ -186,13 +186,13 @@ public class Profile {
     @Column(name = "creation_date")
     private Date creationDate;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "birthday")
     private Date birthday;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", unique = true)
     private String phoneNumber;
 
     @Column(name = "opening_hours")
