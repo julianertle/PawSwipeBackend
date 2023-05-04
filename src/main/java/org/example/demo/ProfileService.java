@@ -40,17 +40,15 @@ public class ProfileService {
             String key = entry.getKey();
             Object value = entry.getValue();
             switch (key) {
-                case "username":
-                    existingProfile.setUsername((String) value);
-                    break;
+
                 case "firstname":
-                    existingProfile.setFirstName((String) value);
+                    existingProfile.setFirstname((String) value);
                     break;
                 case "lastname":
-                    existingProfile.setLastName((String) value);
+                    existingProfile.setLastname((String) value);
                     break;
                 case "profilepicture":
-                    existingProfile.setProfilePicture((byte[]) value);
+                    existingProfile.setProfilepicture((String) value);
                     break;
                 case "description":
                     existingProfile.setDescription((String) value);
@@ -59,16 +57,16 @@ public class ProfileService {
                     existingProfile.setPassword((String) value);
                     break;
                 case "creationdate":
-                    existingProfile.setCreationDate((Date) value);
+                    existingProfile.setCreationdate(((Date) value).toLocalDate());
                     break;
                 case "phonenumber":
-                    existingProfile.setPhoneNumber((String) value);
+                    existingProfile.setPhonenumber((String) value);
                     break;
                 case "country":
                     existingProfile.setCountry((String) value);
                     break;
                 case "postalcode":
-                    existingProfile.setPostalCode((String) value);
+                    existingProfile.setPostalcode((String) value);
                     break;
                 case "city":
                     existingProfile.setCity((String) value);
@@ -77,13 +75,13 @@ public class ProfileService {
                     existingProfile.setStreet((String) value);
                     break;
                 case "streetnumber":
-                    existingProfile.setStreetNumber((String) value);
+                    existingProfile.setStreetnumber((String) value);
                     break;
                 case "birthday":
-                    existingProfile.setBirthday((Date) value);
+                    existingProfile.setBirthday(((Date) value).toLocalDate());
                     break;
                 case "openinghours":
-                    existingProfile.setOpeningHours((String) value);
+                    existingProfile.setOpeninghours((String) value);
                     break;
                 case "homepage":
                     existingProfile.setHomepage((String) value);
@@ -121,7 +119,7 @@ public class ProfileService {
     @GetMapping("/all/ids")
     public ResponseEntity<List<Integer>> getProfileIds() {
         List<Profile> profiles = profileRepository.findAll();
-        List<Integer> ids = profiles.stream().map(Profile::getProfileId).collect(Collectors.toList());
+        List<Integer> ids = profiles.stream().map(Profile::getProfileid).collect(Collectors.toList());
         return ResponseEntity.ok(ids);
     }
 

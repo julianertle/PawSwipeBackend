@@ -1,6 +1,7 @@
 package org.example.demo;
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "profile")
@@ -8,76 +9,152 @@ import java.sql.Date;
 @DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
-    public int getProfileId() {
-        return profileId;
+    public int getProfileid() {
+        return profileid;
+    }
+
+    public void setProfileid(int profileid) {
+        this.profileid = profileid;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setFirstName(String firstname) {
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
-    public void setLastName(String lastname) {
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
-    public void setProfilePicture(byte[] profilepicture) {
-        this.profilePicture = profilepicture;
+    public String getProfilepicture() {
+        return profilepicture;
+    }
+
+    public void setProfilepicture(String profilepicture) {
+        this.profilepicture = profilepicture;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public void setCreationDate(Date creationdate) {
+    public LocalDate getCreationdate() {
+        return creationdate;
+    }
+
+    public void setCreationdate(LocalDate creationdate) {
         this.creationdate = creationdate;
     }
 
-    public void setPhoneNumber(String phonenumber) {
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
+    }
+
+    public String getCountry() {
+        return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
     }
 
-    public void setPostalCode(String postalcode) {
+    public String getPostalcode() {
+        return postalcode;
+    }
+
+    public void setPostalcode(String postalcode) {
         this.postalcode = postalcode;
+    }
+
+    public String getCity() {
+        return city;
     }
 
     public void setCity(String city) {
         this.city = city;
     }
 
+    public String getStreet() {
+        return street;
+    }
+
     public void setStreet(String street) {
         this.street = street;
     }
 
-    public void setStreetNumber(String streetnumber) {
+    public String getStreetnumber() {
+        return streetnumber;
+    }
+
+    public void setStreetnumber(String streetnumber) {
         this.streetnumber = streetnumber;
     }
 
-    public void setBirthday(Date birthday) {
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
-    public void setOpeningHours(String openinghours) {
+    public String getOpeninghours() {
+        return openinghours;
+    }
+
+    public void setOpeninghours(String openinghours) {
         this.openinghours = openinghours;
+    }
+
+    public String getHomepage() {
+        return homepage;
     }
 
     public void setHomepage(String homepage) {
         this.homepage = homepage;
     }
 
+    public String getDiscriminator() {
+        return discriminator;
+    }
+
     public void setDiscriminator(String discriminator) {
         this.discriminator = discriminator;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
@@ -86,10 +163,9 @@ public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "profileid")
-    private int profileId;
+    private int profileid;
 
-    @Column(name = "username")
+    @Column(name = "username", nullable = false)
     private String username;
 
     @Column(name = "firstname")
@@ -99,16 +175,16 @@ public class Profile {
     private String lastname;
 
     @Column(name = "profilepicture")
-    private byte[] profilePicture;
+    private String profilepicture;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Column(name = "creationdate")
-    private Date creationdate;
+    private LocalDate creationdate;
 
     @Column(name = "phonenumber")
     private String phonenumber;
@@ -129,7 +205,7 @@ public class Profile {
     private String streetnumber;
 
     @Column(name = "birthday")
-    private Date birthday;
+    private LocalDate birthday;
 
     @Column(name = "openinghours")
     private String openinghours;
@@ -137,34 +213,19 @@ public class Profile {
     @Column(name = "homepage")
     private String homepage;
 
-    @Column(name = "discriminator")
+    @Column(name = "discriminator", nullable = false)
     private String discriminator;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
     // Constructors
     public Profile() {
     }
 
-    public Profile(int profileId, String username, String firstname, String lastname, byte[] profilePicture, String description, String password, Date creationdate, String phonenumber, String country, String postalcode, String city, String street, String streetnumber, Date birthday, String openinghours, String homepage, String discriminator, String email) {
-        this.profileId = profileId;
-        this.username = username;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.profilePicture = profilePicture;
-        this.description = description;
+    public Profile( String password, String discriminator, String email) {
+
         this.password = password;
-        this.creationdate = creationdate;
-        this.phonenumber = phonenumber;
-        this.country = country;
-        this.postalcode = postalcode;
-        this.city = city;
-        this.street = street;
-        this.streetnumber = streetnumber;
-        this.birthday = birthday;
-        this.openinghours = openinghours;
-        this.homepage = homepage;
         this.discriminator = discriminator;
         this.email = email;
     }

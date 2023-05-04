@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Updated Profile.java and ProfileService.java but has some errors still">
+    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Bug searching">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/exceptionHandeling/ExceptionHandlerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/exceptionHandeling/ExceptionHandlerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="database-jertle-animalservice" />
+        <entry key="$PROJECT_DIR$" value="database-jertle-update-database-scheme" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -171,6 +180,7 @@
       <workItem from="1681727050164" duration="636000" />
       <workItem from="1683060347221" duration="5706000" />
       <workItem from="1683066968881" duration="5902000" />
+      <workItem from="1683228901069" duration="5904000" />
     </task>
     <task id="LOCAL-00001" summary="Started Locally niceeee">
       <created>1681075866320</created>
@@ -295,6 +305,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java</url>
           <line>23</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.7/85b25dc4addfd9b2a39471e0bade79b997df81c0/spring-web-5.3.7-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java</url>
+          <line>194</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
