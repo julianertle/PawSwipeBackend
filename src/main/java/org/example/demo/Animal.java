@@ -13,11 +13,11 @@ public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "animal_id")
-    private int animalId;
+    private int animal_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id", referencedColumnName = "profile_id", nullable = false)
-    private Profile profile;
+    private Profile profile_id;
 
     @Column(name = "species", length = 50)
     private String species;
@@ -47,8 +47,8 @@ public class Animal {
         // no-arg constructor needed by JPA
     }
 
-    public Animal(Profile profile, String species, String name, LocalDate birthday, String illness, String description, String breed, String color, String gender) {
-        this.profile = profile;
+    public Animal(Profile profile_id, String species, String name, LocalDate birthday, String illness, String description, String breed, String color, String gender) {
+        this.profile_id = profile_id;
         this.species = species;
         this.name = name;
         this.birthday = birthday;
@@ -59,20 +59,20 @@ public class Animal {
         this.gender = gender;
     }
 
-    public int getAnimalId() {
-        return animalId;
+    public int getAnimal_id() {
+        return animal_id;
     }
 
-    public void setAnimalId(int animalId) {
-        this.animalId = animalId;
+    public void setAnimal_id(int animalId) {
+        this.animal_id = animalId;
     }
 
-    public Profile getProfile() {
-        return profile;
+    public Profile getProfile_id() {
+        return profile_id;
     }
 
-    public void setProfile(Profile profile) {
-        this.profile = profile;
+    public void setProfile_id(Profile profile) {
+        this.profile_id = profile;
     }
 
     public String getSpecies() {
@@ -140,7 +140,7 @@ public class Animal {
     }
 
     public void setAnimalId(Integer animalId) {
-        this.animalId = animalId;
+        this.animal_id = animalId;
     }
 
 }

@@ -8,12 +8,12 @@ import java.sql.Date;
 @DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
-    public int getProfileId() {
-        return profileId;
+    public int getProfile_id() {
+        return profile_id;
     }
 
-    public void setProfileId(int profileId) {
-        this.profileId = profileId;
+    public void setProfile_id(int profileId) {
+        this.profile_id = profileId;
     }
 
     public String getUsername() {
@@ -24,12 +24,12 @@ public class Profile {
         this.username = username;
     }
 
-    public byte[] getProfilePicture() {
-        return profilePicture;
+    public byte[] getProfile_picture() {
+        return profile_picture;
     }
 
-    public void setProfilePicture(byte[] profilePicture) {
-        this.profilePicture = profilePicture;
+    public void setProfile_picture(byte[] profilePicture) {
+        this.profile_picture = profilePicture;
     }
 
     public String getDescription() {
@@ -48,12 +48,12 @@ public class Profile {
         this.password = password;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public Date getCreation_date() {
+        return creation_date;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setCreation_date(Date creationDate) {
+        this.creation_date = creationDate;
     }
 
     public String getEmail() {
@@ -72,20 +72,20 @@ public class Profile {
         this.birthday = birthday;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone_number(String phoneNumber) {
+        this.phone_number = phoneNumber;
     }
 
-    public String getOpeningHours() {
-        return openingHours;
+    public String getOpening_hours() {
+        return opening_hours;
     }
 
-    public void setOpeningHours(String openingHours) {
-        this.openingHours = openingHours;
+    public void setOpening_hours(String openingHours) {
+        this.opening_hours = openingHours;
     }
 
     public String getStreet() {
@@ -112,12 +112,12 @@ public class Profile {
         this.city = city;
     }
 
-    public int getStreetNumber() {
-        return streetNumber;
+    public int getStreet_number() {
+        return street_number;
     }
 
-    public void setStreetNumber(int streetNumber) {
-        this.streetNumber = streetNumber;
+    public void setStreet_number(int streetNumber) {
+        this.street_number = streetNumber;
     }
 
     public String getHomepage() {
@@ -128,12 +128,12 @@ public class Profile {
         this.homepage = homepage;
     }
 
-    public int getPostalCode() {
-        return postalCode;
+    public int getPostal_code() {
+        return postal_code;
     }
 
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
+    public void setPostal_code(int postalCode) {
+        this.postal_code = postalCode;
     }
 
     public String getDiscriminator() {
@@ -163,7 +163,7 @@ public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "profile_id",unique = true)
-    private int profileId;
+    private int profile_id;
 
     @Column(name = "username", nullable = false)
     private String username;
@@ -175,7 +175,7 @@ public class Profile {
     private String lastname;
 
     @Column(name = "profile_picture")
-    private byte[] profilePicture;
+    private byte[] profile_picture;
 
     @Column(name = "description")
     private String description;
@@ -184,7 +184,7 @@ public class Profile {
     private String password;
 
     @Column(name = "creation_date")
-    private Date creationDate;
+    private Date creation_date;
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
@@ -193,10 +193,10 @@ public class Profile {
     private Date birthday;
 
     @Column(name = "phone_number", unique = true)
-    private String phoneNumber;
+    private String phone_number;
 
     @Column(name = "opening_hours")
-    private String openingHours;
+    private String opening_hours;
 
     @Column(name = "street")
     private String street;
@@ -208,13 +208,13 @@ public class Profile {
     private String city;
 
     @Column(name = "street_number")
-    private int streetNumber;
+    private int street_number;
 
     @Column(name = "homepage")
     private String homepage;
 
     @Column(name = "postal_code")
-    private int postalCode;
+    private int postal_code;
 
     @Column(name = "discriminator", insertable = false, updatable = false)
     private String discriminator;
@@ -223,24 +223,24 @@ public class Profile {
     public Profile() {
     }
 
-    public Profile(String username, byte[] profilePicture, String description, String password, Date creationDate,
-                   String email, Date birthday, String phoneNumber, String openingHours,
-                   String street, String country, String city, int streetNumber, String homepage, int postalCode, String firstname, String lastname) {
+    public Profile(String username, byte[] profile_picture, String description, String password, Date creation_date,
+                   String email, Date birthday, String phone_number, String opening_hours,
+                   String street, String country, String city, int street_number, String homepage, int postal_code, String firstname, String lastname) {
         this.username = username;
-        this.profilePicture = profilePicture;
+        this.profile_picture = profile_picture;
         this.description = description;
         this.password = password;
-        this.creationDate = creationDate;
+        this.creation_date = creation_date;
         this.email = email;
         this.birthday = birthday;
-        this.phoneNumber = phoneNumber;
-        this.openingHours = openingHours;
+        this.phone_number = phone_number;
+        this.opening_hours = opening_hours;
         this.street = street;
         this.country = country;
         this.city = city;
-        this.streetNumber = streetNumber;
+        this.street_number = street_number;
         this.homepage = homepage;
-        this.postalCode = postalCode;
+        this.postal_code = postal_code;
         this.firstname = firstname;
         this.lastname = lastname;
     }

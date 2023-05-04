@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.sql.Date;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +39,7 @@ public class ProfileService {
                         existingProfile.setUsername((String) value);
                         break;
                     case "profile_picture":
-                        existingProfile.setProfilePicture((byte[]) value);
+                        existingProfile.setProfile_picture((byte[]) value);
                         break;
                     case "description":
                         existingProfile.setDescription((String) value);
@@ -49,7 +48,7 @@ public class ProfileService {
                         existingProfile.setPassword((String) value);
                         break;
                     case "creation_date":
-                        existingProfile.setCreationDate((Date) value);
+                        existingProfile.setCreation_date((Date) value);
                         break;
                     case "email":
                         existingProfile.setEmail((String) value);
@@ -58,10 +57,10 @@ public class ProfileService {
                         existingProfile.setBirthday((Date) value);
                         break;
                     case "phone_number":
-                        existingProfile.setPhoneNumber((String) value);
+                        existingProfile.setPhone_number((String) value);
                         break;
                     case "opening_hours":
-                        existingProfile.setOpeningHours((String) value);
+                        existingProfile.setOpening_hours((String) value);
                         break;
                     case "street":
                         existingProfile.setStreet((String) value);
@@ -73,16 +72,22 @@ public class ProfileService {
                         existingProfile.setCity((String) value);
                         break;
                     case "street_number":
-                        existingProfile.setStreetNumber((Integer) value);
+                        existingProfile.setStreet_number((Integer) value);
                         break;
                     case "homepage":
                         existingProfile.setHomepage((String) value);
                         break;
                     case "postal_code":
-                        existingProfile.setPostalCode((Integer) value);
+                        existingProfile.setPostal_code((Integer) value);
                         break;
                     case "discriminator":
                         existingProfile.setDiscriminator((String) value);
+                        break;
+                    case "firstname":
+                        existingProfile.setFirstname((String) value);
+                        break;
+                    case "lastname":
+                        existingProfile.setLastname((String) value);
                         break;
                     default:
                         // Ignore any unknown fields
@@ -94,8 +99,6 @@ public class ProfileService {
             Profile updatedProfile = profileRepository.save(existingProfile);
             return ResponseEntity.ok(updatedProfile);
     }
-
-
 
     @GetMapping("/id/{id}")
     public ResponseEntity<Profile> getProfile(@PathVariable("id") Integer id) {
@@ -117,11 +120,10 @@ public class ProfileService {
         }
     }
 
-
     @GetMapping("/all/ids")
     public ResponseEntity<List<Integer>> getProfileIds() {
         List<Profile> profiles = profileRepository.findAll();
-        List<Integer> ids = profiles.stream().map(Profile::getProfileId).collect(Collectors.toList());
+        List<Integer> ids = profiles.stream().map(Profile::getProfile_id).collect(Collectors.toList());
         return ResponseEntity.ok(ids);
     }
 
