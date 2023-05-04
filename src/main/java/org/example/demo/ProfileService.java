@@ -97,11 +97,21 @@ public class ProfileService {
 
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Profile> getProfile(@PathVariable("id") Integer id) {
         Optional<Profile> profileOptional = profileRepository.findById(id);
         if (profileOptional.isPresent()) {
             return ResponseEntity.ok(profileOptional.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/email/{email}")
+    public ResponseEntity<Profile> getProfileByEmail(@PathVariable String email) {
+        Profile profile = profileRepository.findByEmail(email);
+        if (profile != null) {
+            return ResponseEntity.ok(profile);
         } else {
             return ResponseEntity.notFound().build();
         }
