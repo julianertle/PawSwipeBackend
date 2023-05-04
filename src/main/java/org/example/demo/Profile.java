@@ -8,14 +8,6 @@ import java.sql.Date;
 @DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "profile_id")
-    private int profileId;
-
-    @Column(name = "username")
-    private String username;
-
     public int getProfileId() {
         return profileId;
     }
@@ -70,14 +62,6 @@ public class Profile {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public int getComplete() {
-        return isComplete;
-    }
-
-    public void setComplete(int complete) {
-        isComplete = complete;
     }
 
     public Date getBirthday() {
@@ -176,6 +160,14 @@ public class Profile {
         this.lastname = lastname;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "profile_id")
+    private int profileId;
+
+    @Column(name = "username", nullable = false)
+    private String username;
+
     @Column(name = "firstname")
     private String firstname;
 
@@ -188,17 +180,14 @@ public class Profile {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Column(name = "creation_date")
     private Date creationDate;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
-
-    @Column(name = "is_complete")
-    private int isComplete;
 
     @Column(name = "birthday")
     private Date birthday;
@@ -235,7 +224,7 @@ public class Profile {
     }
 
     public Profile(String username, byte[] profilePicture, String description, String password, Date creationDate,
-                   String email, int isComplete, Date birthday, String phoneNumber, String openingHours,
+                   String email, Date birthday, String phoneNumber, String openingHours,
                    String street, String country, String city, int streetNumber, String homepage, int postalCode, String firstname, String lastname) {
         this.username = username;
         this.profilePicture = profilePicture;
@@ -243,7 +232,6 @@ public class Profile {
         this.password = password;
         this.creationDate = creationDate;
         this.email = email;
-        this.isComplete = isComplete;
         this.birthday = birthday;
         this.phoneNumber = phoneNumber;
         this.openingHours = openingHours;
