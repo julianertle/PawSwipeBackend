@@ -91,7 +91,7 @@ public class AnimalService {
 
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Animal> getAnimal(@PathVariable("id") int id)  {
         try {
             Optional<Animal> animalOptional = animalRepository.findById(id);
