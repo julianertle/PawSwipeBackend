@@ -4,7 +4,7 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "profile")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
@@ -12,76 +12,160 @@ public class Profile {
         return profile_id;
     }
 
+    public void setProfile_id(int profile_id) {
+        this.profile_id = profile_id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setProfile_picture(byte[] profilePicture) {
-        this.profile_picture = profilePicture;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setCreation_date(Date creationDate) {
-        this.creation_date = creationDate;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
-
-    public void setPhone_number(String phoneNumber) {
-        this.phone_number = phoneNumber;
-    }
-
-    public void setOpening_hours(String openingHours) {
-        this.opening_hours = openingHours;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setStreet_number(int streetNumber) {
-        this.street_number = streetNumber;
-    }
-
-    public void setHomepage(String homepage) {
-        this.homepage = homepage;
-    }
-
-    public void setPostal_code(int postalCode) {
-        this.postal_code = postalCode;
-    }
-
-    public void setDiscriminator(String discriminator) {
-        this.discriminator = discriminator;
+    public String getFirstname() {
+        return firstname;
     }
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
 
+    public String getLastname() {
+        return lastname;
+    }
+
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public int getIs_admin() {
+        return is_admin;
+    }
+
+    public void setIs_admin(int is_admin) {
+        this.is_admin = is_admin;
+    }
+
+    public byte[] getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(byte[] profile_picture) {
+        this.profile_picture = profile_picture;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getCreation_date() {
+        return creation_date;
+    }
+
+    public void setCreation_date(Date creation_date) {
+        this.creation_date = creation_date;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public String getOpening_hours() {
+        return opening_hours;
+    }
+
+    public void setOpening_hours(String opening_hours) {
+        this.opening_hours = opening_hours;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getStreet_number() {
+        return street_number;
+    }
+
+    public void setStreet_number(int street_number) {
+        this.street_number = street_number;
+    }
+
+    public String getHomepage() {
+        return homepage;
+    }
+
+    public void setHomepage(String homepage) {
+        this.homepage = homepage;
+    }
+
+    public int getPostal_code() {
+        return postal_code;
+    }
+
+    public void setPostal_code(int postal_code) {
+        this.postal_code = postal_code;
+    }
+
+    public String getDiscriminator() {
+        return discriminator;
+    }
+
+    public void setDiscriminator(String discriminator) {
+        this.discriminator = discriminator;
     }
 
     @Id
