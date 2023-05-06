@@ -144,6 +144,14 @@ public class Profile {
         this.discriminator = discriminator;
     }
 
+    public int getIs_admin() {
+        return is_admin;
+    }
+
+    public void setIs_admin(int is_admin) {
+        this.is_admin = is_admin;
+    }
+
     public String getFirstname() {
         return firstname;
     }
@@ -173,6 +181,9 @@ public class Profile {
 
     @Column(name = "lastname")
     private String lastname;
+
+    @Column(name = "is_admin", columnDefinition = "TINYINT default 0")  // @todo security risk cause with a create request you could define this true with "is_admin":1
+    private int is_admin;
 
     @Column(name = "profile_picture")
     private byte[] profile_picture;
