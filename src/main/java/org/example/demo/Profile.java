@@ -5,7 +5,7 @@ import java.sql.Date;
 @Entity
 @Table(name = "profile")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "discriminator")
+//@DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
     public int getProfile_id() {
@@ -143,7 +143,7 @@ public class Profile {
     @Column(name = "postal_code")
     private int postal_code;
 
-    @Column(name = "discriminator", insertable = false, updatable = false)
+    @Column(name = "discriminator") //, insertable = false, updatable = false
     private String discriminator;
 
     // Constructors
