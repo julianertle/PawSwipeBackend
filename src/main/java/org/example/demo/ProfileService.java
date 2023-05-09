@@ -72,7 +72,7 @@ public class ProfileService {
                         existingProfile.setCity((String) value);
                         break;
                     case "street_number":
-                        existingProfile.setStreet_number((Integer) value);
+                        existingProfile.setStreet_number((String) value);
                         break;
                     case "homepage":
                         existingProfile.setHomepage((String) value);

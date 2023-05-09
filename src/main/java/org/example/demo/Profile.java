@@ -136,11 +136,11 @@ public class Profile {
         this.city = city;
     }
 
-    public int getStreet_number() {
+    public String getStreet_number() {
         return street_number;
     }
 
-    public void setStreet_number(int street_number) {
+    public void setStreet_number(String street_number) {
         this.street_number = street_number;
     }
 
@@ -219,7 +219,7 @@ public class Profile {
     private String city;
 
     @Column(name = "street_number")
-    private int street_number;
+    private String street_number;
 
     @Column(name = "homepage")
     private String homepage;
@@ -236,7 +236,7 @@ public class Profile {
 
     public Profile(String username, byte[] profile_picture, String description, String password, Date creation_date,
                    String email, Date birthday, String phone_number, String opening_hours,
-                   String street, String country, String city, int street_number, String homepage, int postal_code, String firstname, String lastname) {
+                   String street, String country, String city, String street_number, String homepage, int postal_code, String firstname, String lastname) {
         this.username = username;
         this.profile_picture = profile_picture;
         this.description = description;
