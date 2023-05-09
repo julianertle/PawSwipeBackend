@@ -43,7 +43,7 @@ public class AnimalService {
 
                     case "profile":
                         if (value instanceof Profile) {
-                            existingAnimal.setProfile((Profile) value);
+                            existingAnimal.setProfile_id((Profile) value);
                         } else {
                             throw new IllegalArgumentException("Value for 'profile' must be of type Profile.");
                         }
@@ -91,7 +91,7 @@ public class AnimalService {
 
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Animal> getAnimal(@PathVariable("id") int id)  {
         try {
             Optional<Animal> animalOptional = animalRepository.findById(id);
@@ -109,7 +109,7 @@ public class AnimalService {
     public ResponseEntity<List<Integer>> getAnimalIds() throws AnimalServiceException {
         List<Animal> animals;
         animals = animalRepository.findAll();
-        List<Integer> ids = animals.stream().map(Animal::getAnimalId).collect(Collectors.toList());
+        List<Integer> ids = animals.stream().map(Animal::getAnimal_id).collect(Collectors.toList());
         return ResponseEntity.ok(ids);
     }
 

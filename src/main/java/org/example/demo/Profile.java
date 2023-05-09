@@ -4,24 +4,16 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "profile")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "discriminator")
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "profile_id")
-    private int profileId;
-
-    @Column(name = "username")
-    private String username;
-
-    public int getProfileId() {
-        return profileId;
+    public int getProfile_id() {
+        return profile_id;
     }
 
-    public void setProfileId(int profileId) {
-        this.profileId = profileId;
+    public void setProfile_id(int profile_id) {
+        this.profile_id = profile_id;
     }
 
     public String getUsername() {
@@ -32,12 +24,36 @@ public class Profile {
         this.username = username;
     }
 
-    public byte[] getProfilePicture() {
-        return profilePicture;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setProfilePicture(byte[] profilePicture) {
-        this.profilePicture = profilePicture;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public int getIs_admin() {
+        return is_admin;
+    }
+
+    public void setIs_admin(int is_admin) {
+        this.is_admin = is_admin;
+    }
+
+    public byte[] getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(byte[] profile_picture) {
+        this.profile_picture = profile_picture;
     }
 
     public String getDescription() {
@@ -56,12 +72,12 @@ public class Profile {
         this.password = password;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public Date getCreation_date() {
+        return creation_date;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setCreation_date(Date creation_date) {
+        this.creation_date = creation_date;
     }
 
     public String getEmail() {
@@ -72,14 +88,6 @@ public class Profile {
         this.email = email;
     }
 
-    public Boolean getComplete() {
-        return isComplete;
-    }
-
-    public void setComplete(Boolean complete) {
-        isComplete = complete;
-    }
-
     public Date getBirthday() {
         return birthday;
     }
@@ -88,20 +96,20 @@ public class Profile {
         this.birthday = birthday;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
-    public String getOpeningHours() {
-        return openingHours;
+    public String getOpening_hours() {
+        return opening_hours;
     }
 
-    public void setOpeningHours(String openingHours) {
-        this.openingHours = openingHours;
+    public void setOpening_hours(String opening_hours) {
+        this.opening_hours = opening_hours;
     }
 
     public String getStreet() {
@@ -128,12 +136,12 @@ public class Profile {
         this.city = city;
     }
 
-    public int getStreetNumber() {
-        return streetNumber;
+    public String getStreet_number() {
+        return street_number;
     }
 
-    public void setStreetNumber(int streetNumber) {
-        this.streetNumber = streetNumber;
+    public void setStreet_number(String street_number) {
+        this.street_number = street_number;
     }
 
     public String getHomepage() {
@@ -144,12 +152,12 @@ public class Profile {
         this.homepage = homepage;
     }
 
-    public int getPostalCode() {
-        return postalCode;
+    public int getPostal_code() {
+        return postal_code;
     }
 
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
+    public void setPostal_code(int postal_code) {
+        this.postal_code = postal_code;
     }
 
     public String getDiscriminator() {
@@ -160,32 +168,46 @@ public class Profile {
         this.discriminator = discriminator;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "profile_id",unique = true)
+    private int profile_id;
+
+    @Column(name = "username", nullable = false)
+    private String username;
+
+    @Column(name = "firstname")
+    private String firstname;
+
+    @Column(name = "lastname")
+    private String lastname;
+
+    @Column(name = "is_admin", columnDefinition = "TINYINT default 0")  // @todo security risk cause with a create request you could define this true with "is_admin":1
+    private int is_admin;
+
     @Column(name = "profile_picture")
-    private byte[] profilePicture;
+    private byte[] profile_picture;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Column(name = "creation_date")
-    private Date creationDate;
+    private Date creation_date;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
-
-    @Column(name = "is_complete")
-    private Boolean isComplete;
 
     @Column(name = "birthday")
     private Date birthday;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
+    @Column(name = "phone_number", unique = true)
+    private String phone_number;
 
     @Column(name = "opening_hours")
-    private String openingHours;
+    private String opening_hours;
 
     @Column(name = "street")
     private String street;
@@ -197,39 +219,40 @@ public class Profile {
     private String city;
 
     @Column(name = "street_number")
-    private int streetNumber;
+    private String street_number;
 
     @Column(name = "homepage")
     private String homepage;
 
     @Column(name = "postal_code")
-    private int postalCode;
+    private int postal_code;
 
-    @Column(name = "discriminator", insertable = false, updatable = false)
+    @Column(name = "discriminator") //, insertable = false, updatable = false
     private String discriminator;
 
     // Constructors
     public Profile() {
     }
 
-    public Profile(String username, byte[] profilePicture, String description, String password, Date creationDate,
-                   String email, Boolean isComplete, Date birthday, String phoneNumber, String openingHours,
-                   String street, String country, String city, int streetNumber, String homepage, int postalCode) {
+    public Profile(String username, byte[] profile_picture, String description, String password, Date creation_date,
+                   String email, Date birthday, String phone_number, String opening_hours,
+                   String street, String country, String city, String street_number, String homepage, int postal_code, String firstname, String lastname) {
         this.username = username;
-        this.profilePicture = profilePicture;
+        this.profile_picture = profile_picture;
         this.description = description;
         this.password = password;
-        this.creationDate = creationDate;
+        this.creation_date = creation_date;
         this.email = email;
-        this.isComplete = isComplete;
         this.birthday = birthday;
-        this.phoneNumber = phoneNumber;
-        this.openingHours = openingHours;
+        this.phone_number = phone_number;
+        this.opening_hours = opening_hours;
         this.street = street;
         this.country = country;
         this.city = city;
-        this.streetNumber = streetNumber;
+        this.street_number = street_number;
         this.homepage = homepage;
-        this.postalCode = postalCode;
+        this.postal_code = postal_code;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 }
