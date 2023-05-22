@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 @RestControllerAdvice
 public class ExceptionHandlerController {
-/**
+
     @ExceptionHandler(SQLException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorResponse handleSQLException(SQLException ex) {
@@ -15,17 +15,6 @@ public class ExceptionHandlerController {
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 "Database Error",
                 "An error occurred while processing your request.",
-                ex.getMessage()
-        );
-    }
-
-    @ExceptionHandler(AnimalServiceException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ErrorResponse handleAnimalServiceException(AnimalServiceException ex) {
-        return new ErrorResponse(
-                HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                "Animal Service Error",
-                "An error occurred while processing your animal service request.",
                 ex.getMessage()
         );
     }
@@ -41,6 +30,6 @@ public class ExceptionHandlerController {
                 ex.getMessage()
         );
     }
-*/
+
 }
 
