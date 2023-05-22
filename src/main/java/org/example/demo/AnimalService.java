@@ -73,6 +73,22 @@ public class AnimalService {
                     case "gender":
                         existingAnimal.setGender((String) value);
                         break;
+                    case "picture_one":
+                        existingAnimal.setPicture_one((byte[]) value);
+                        break;
+                    case "picture_two":
+                        existingAnimal.setPicture_two((byte[]) value);
+                        break;
+                    case "picture_three":
+                        existingAnimal.setPicture_three((byte[]) value);
+                        break;
+                    case "picture_four":
+                        existingAnimal.setPicture_four((byte[]) value);
+                        break;
+                    case "picture_five":
+                        existingAnimal.setPicture_five((byte[]) value);
+                        break;
+
                     default:
                         // Ignore any unknown fields
                         break;

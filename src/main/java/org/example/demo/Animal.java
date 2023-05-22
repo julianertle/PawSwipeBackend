@@ -45,11 +45,28 @@ public class Animal {
     @Column(name = "gender", length = 50)
     private String gender;
 
+    @Column(name = "picture_one")
+    private byte[] picture_one;
+
+    @Column(name = "picture_two")
+    private byte[] picture_two;
+
+    @Column(name = "picture_three")
+    private byte[] picture_three;
+
+    @Column(name = "picture_four")
+    private byte[] picture_four;
+
+    @Column(name = "picture_five")
+    private byte[] picture_five;
+
+
     public Animal() {
         // no-arg constructor needed by JPA
     }
 
-    public Animal(Profile profile_id, String species, String name, LocalDate birthday, String illness, String description, String breed, String color, String gender) {
+    public Animal(Profile profile_id, String species, String name, LocalDate birthday, String illness, String description,
+                  String breed, String color, String gender, byte[] picture_one, byte[] picture_two, byte[] picture_three, byte[] picture_four, byte[] picture_five) {
         this.profile_id = profile_id;
         this.species = species;
         this.name = name;
@@ -59,6 +76,12 @@ public class Animal {
         this.breed = breed;
         this.color = color;
         this.gender = gender;
+        this.picture_one = picture_one;
+        this.picture_two = picture_two;
+        this.picture_three = picture_three;
+        this.picture_four = picture_four;
+        this.picture_five = picture_five;
+
     }
 
     public int getAnimal_id() {
@@ -145,4 +168,43 @@ public class Animal {
         this.animal_id = animalId;
     }
 
+    public byte[] getPicture_one() {
+        return picture_one;
+    }
+
+    public void setPicture_one(byte[] picture_one) {
+        this.picture_one = picture_one;
+    }
+
+    public byte[] getPicture_two() {
+        return picture_two;
+    }
+
+    public void setPicture_two(byte[] picture_two) {
+        this.picture_two = picture_two;
+    }
+
+    public byte[] getPicture_three() {
+        return picture_three;
+    }
+
+    public void setPicture_three(byte[] picture_three) {
+        this.picture_three = picture_three;
+    }
+
+    public byte[] getPicture_four() {
+        return picture_four;
+    }
+
+    public void setPicture_four(byte[] picture_four) {
+        this.picture_four = picture_four;
+    }
+
+    public byte[] getPicture_five() {
+        return picture_five;
+    }
+
+    public void setPicture_five(byte[] picture_five) {
+        this.picture_five = picture_five;
+    }
 }
