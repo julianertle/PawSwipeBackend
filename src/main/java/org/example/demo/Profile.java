@@ -5,16 +5,18 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "profile")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "discriminator")
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
-    public int getProfileid() {
-        return profileid;
+
+    public int getProfile_id() {
+        return profile_id;
     }
 
-    public void setProfileid(int profileid) {
-        this.profileid = profileid;
+    public void setProfile_id(int profile_id) {
+        this.profile_id = profile_id;
+
     }
 
     public String getUsername() {
@@ -39,14 +41,23 @@ public class Profile {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+
     }
 
-    public String getProfilepicture() {
-        return profilepicture;
+    public int getIs_admin() {
+        return is_admin;
     }
 
-    public void setProfilepicture(String profilepicture) {
-        this.profilepicture = profilepicture;
+    public void setIs_admin(int is_admin) {
+        this.is_admin = is_admin;
+    }
+
+    public byte[] getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(byte[] profile_picture) {
+        this.profile_picture = profile_picture;
     }
 
     public String getDescription() {
@@ -65,12 +76,14 @@ public class Profile {
         this.password = password;
     }
 
-    public LocalDate getCreationdate() {
-        return creationdate;
+
+    public Date getCreation_date() {
+        return creation_date;
     }
 
-    public void setCreationdate(LocalDate creationdate) {
-        this.creationdate = creationdate;
+    public void setCreation_date(Date creation_date) {
+        this.creation_date = creation_date;
+
     }
 
     public String getPhonenumber() {
@@ -81,28 +94,35 @@ public class Profile {
         this.phonenumber = phonenumber;
     }
 
+
     public String getCountry() {
         return country;
+
+    public Date getBirthday() {
+        return birthday;
+
     }
 
     public void setCountry(String country) {
         this.country = country;
     }
 
-    public String getPostalcode() {
-        return postalcode;
+
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setPostalcode(String postalcode) {
-        this.postalcode = postalcode;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
-    public String getCity() {
-        return city;
+    public String getOpening_hours() {
+        return opening_hours;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setOpening_hours(String opening_hours) {
+        this.opening_hours = opening_hours;
+
     }
 
     public String getStreet() {
@@ -129,12 +149,14 @@ public class Profile {
         this.birthday = birthday;
     }
 
-    public String getOpeninghours() {
-        return openinghours;
+
+    public String getStreet_number() {
+        return street_number;
     }
 
-    public void setOpeninghours(String openinghours) {
-        this.openinghours = openinghours;
+    public void setStreet_number(String street_number) {
+        this.street_number = street_number;
+
     }
 
     public String getHomepage() {
@@ -145,6 +167,16 @@ public class Profile {
         this.homepage = homepage;
     }
 
+
+    public int getPostal_code() {
+        return postal_code;
+    }
+
+    public void setPostal_code(int postal_code) {
+        this.postal_code = postal_code;
+    }
+
+
     public String getDiscriminator() {
         return discriminator;
     }
@@ -153,17 +185,11 @@ public class Profile {
         this.discriminator = discriminator;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int profileid;
+    @Column(name = "profile_id",unique = true)
+    private int profile_id;
 
     @Column(name = "username", nullable = false)
     private String username;
@@ -174,14 +200,34 @@ public class Profile {
     @Column(name = "lastname")
     private String lastname;
 
-    @Column(name = "profilepicture")
-    private String profilepicture;
+    @Column(name = "is_admin", columnDefinition = "TINYINT default 0")  // @todo security risk cause with a create request you could define this true with "is_admin":1
+    private int is_admin;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "profile_picture")
+    private byte[] profile_picture;
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Column(name = "creation_date")
+    private Date creation_date;
+
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+    @Column(name = "birthday")
+    private Date birthday;
+
+    @Column(name = "phone_number", unique = true)
+    private String phone_number;
+
+    @Column(name = "opening_hours")
+    private String opening_hours;
 
     @Column(name = "creationdate")
     private LocalDate creationdate;
@@ -198,22 +244,18 @@ public class Profile {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "street")
-    private String street;
-
-    @Column(name = "streetnumber")
-    private String streetnumber;
-
-    @Column(name = "birthday")
-    private LocalDate birthday;
-
-    @Column(name = "openinghours")
-    private String openinghours;
+    @Column(name = "street_number")
+    private String street_number;
 
     @Column(name = "homepage")
     private String homepage;
 
-    @Column(name = "discriminator", nullable = false)
+
+    @Column(name = "postal_code")
+    private int postal_code;
+
+    @Column(name = "discriminator") //, insertable = false, updatable = false
+
     private String discriminator;
 
     @Column(name = "email", nullable = false)
@@ -223,11 +265,28 @@ public class Profile {
     public Profile() {
     }
 
-    public Profile( String password, String discriminator, String email) {
 
+    public Profile(String username, byte[] profile_picture, String description, String password, Date creation_date,
+                   String email, Date birthday, String phone_number, String opening_hours,
+                   String street, String country, String city, String street_number, String homepage, int postal_code, String firstname, String lastname) {
+        this.username = username;
+        this.profile_picture = profile_picture;
+        this.description = description;
         this.password = password;
-        this.discriminator = discriminator;
+        this.creation_date = creation_date;
         this.email = email;
+        this.birthday = birthday;
+        this.phone_number = phone_number;
+        this.opening_hours = opening_hours;
+        this.street = street;
+        this.country = country;
+        this.city = city;
+        this.street_number = street_number;
+        this.homepage = homepage;
+        this.postal_code = postal_code;
+        this.firstname = firstname;
+        this.lastname = lastname;
+
     }
 
 }
