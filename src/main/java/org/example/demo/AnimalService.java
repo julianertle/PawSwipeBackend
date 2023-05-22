@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.math.BigInteger;
 import java.time.LocalDate;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -74,19 +77,29 @@ public class AnimalService {
                         existingAnimal.setGender((String) value);
                         break;
                     case "picture_one":
-                        existingAnimal.setPicture_one((byte[]) value);
+                        String base64StringOne = (String) value;
+                        byte[] pictureDataOne = Base64.getDecoder().decode(base64StringOne);
+                        existingAnimal.setPicture_one(pictureDataOne);
                         break;
                     case "picture_two":
-                        existingAnimal.setPicture_two((byte[]) value);
+                        String base64StringTwo = (String) value;
+                        byte[] pictureDataTwo = Base64.getDecoder().decode(base64StringTwo);
+                        existingAnimal.setPicture_two(pictureDataTwo);
                         break;
                     case "picture_three":
-                        existingAnimal.setPicture_three((byte[]) value);
+                        String base64StringThree = (String) value;
+                        byte[] pictureDataThree = Base64.getDecoder().decode(base64StringThree);
+                        existingAnimal.setPicture_three(pictureDataThree);
                         break;
                     case "picture_four":
-                        existingAnimal.setPicture_four((byte[]) value);
+                        String base64StringFour = (String) value;
+                        byte[] pictureDataFour = Base64.getDecoder().decode(base64StringFour);
+                        existingAnimal.setPicture_four(pictureDataFour);
                         break;
                     case "picture_five":
-                        existingAnimal.setPicture_five((byte[]) value);
+                        String base64StringFive = (String) value;
+                        byte[] pictureDataFive = Base64.getDecoder().decode(base64StringFive);
+                        existingAnimal.setPicture_five(pictureDataFive);
                         break;
 
                     default:
