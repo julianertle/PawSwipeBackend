@@ -28,6 +28,7 @@ public class ProfileService {
     @PutMapping("/update/{id}")
     public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") int id, @RequestBody Map<String, Object> updates) {
 
+
             Profile existingProfile = profileRepository.getById(id);
 
             // Update each field that was specified in the request body
@@ -94,10 +95,11 @@ public class ProfileService {
                         break;
                 }
             }
+        }
 
-            // Save the updated profile and return it in the response
-            Profile updatedProfile = profileRepository.save(existingProfile);
-            return ResponseEntity.ok(updatedProfile);
+        // Save the updated profile and return it in the response
+        Profile updatedProfile = profileRepository.save(existingProfile);
+        return ResponseEntity.ok(updatedProfile);
     }
 
     @GetMapping("/id/{id}")
@@ -123,6 +125,7 @@ public class ProfileService {
     @GetMapping("/all/ids")
     public ResponseEntity<List<Integer>> getProfileIds() {
         List<Profile> profiles = profileRepository.findAll();
+
         List<Integer> ids = profiles.stream().map(Profile::getProfile_id).collect(Collectors.toList());
         return ResponseEntity.ok(ids);
     }

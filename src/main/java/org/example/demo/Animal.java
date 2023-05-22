@@ -12,12 +12,14 @@ public class Animal {
     @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "animal_id")
     private int animal_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id", referencedColumnName = "profile_id", nullable = false)
     private Profile profile_id;
+
 
     @Column(name = "species", length = 50)
     private String species;

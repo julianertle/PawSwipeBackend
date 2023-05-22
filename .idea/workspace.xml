@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Added AnimalService" />
+    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Bug searching">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,16 +19,39 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="database-jertle-update-database-scheme" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -149,7 +176,11 @@
       <workItem from="1681252973221" duration="599000" />
       <workItem from="1681386914061" duration="4826000" />
       <workItem from="1681392527612" duration="2256000" />
-      <workItem from="1681468237394" duration="7552000" />
+      <workItem from="1681468237394" duration="14008000" />
+      <workItem from="1681727050164" duration="636000" />
+      <workItem from="1683060347221" duration="5706000" />
+      <workItem from="1683066968881" duration="5902000" />
+      <workItem from="1683228901069" duration="5904000" />
     </task>
     <task id="LOCAL-00001" summary="Started Locally niceeee">
       <created>1681075866320</created>
@@ -186,7 +217,56 @@
       <option name="project" value="LOCAL" />
       <updated>1681475803398</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added gitignore">
+      <created>1681476298034</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681476298034</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added gitignore">
+      <created>1681476414927</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681476414927</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Refactoring">
+      <created>1681476902489</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681476902489</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added update method to ProfileService">
+      <created>1681477833297</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681477833297</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Made it accessible for the Server">
+      <created>1681482928098</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681482928098</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changed for local test purpose">
+      <created>1681482964178</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681482964178</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Updated Profile.java and ProfileService.java but has some errors still">
+      <created>1683062907846</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683062907846</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +290,28 @@
     <MESSAGE value="Get profile from id workds" />
     <MESSAGE value="Working Server API version" />
     <MESSAGE value="Added AnimalService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AnimalService" />
+    <MESSAGE value="Added gitignore" />
+    <MESSAGE value="Refactoring" />
+    <MESSAGE value="Added update method to ProfileService" />
+    <MESSAGE value="Made it accessible for the Server" />
+    <MESSAGE value="Changed for local test purpose" />
+    <MESSAGE value="Updated Profile.java and ProfileService.java but has some errors still" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Profile.java and ProfileService.java but has some errors still" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.7/85b25dc4addfd9b2a39471e0bade79b997df81c0/spring-web-5.3.7-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java</url>
+          <line>194</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
