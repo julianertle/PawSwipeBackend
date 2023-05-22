@@ -28,72 +28,70 @@ public class ProfileService {
     @PutMapping("/update/{id}")
     public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") int id, @RequestBody Map<String, Object> updates) {
 
+        Profile existingProfile = profileRepository.getById(id);
 
-            Profile existingProfile = profileRepository.getById(id);
-
-            // Update each field that was specified in the request body
-            for (Map.Entry<String, Object> entry : updates.entrySet()) {
-                String key = entry.getKey();
-                Object value = entry.getValue();
-                switch (key) {
-                    case "username":
-                        existingProfile.setUsername((String) value);
-                        break;
-                    case "profile_picture":
-                        existingProfile.setProfile_picture((byte[]) value);
-                        break;
-                    case "description":
-                        existingProfile.setDescription((String) value);
-                        break;
-                    case "password":
-                        existingProfile.setPassword((String) value);
-                        break;
-                    case "creation_date":
-                        existingProfile.setCreation_date((Date) value);
-                        break;
-                    case "email":
-                        existingProfile.setEmail((String) value);
-                        break;
-                    case "birthday":
-                        existingProfile.setBirthday((Date) value);
-                        break;
-                    case "phone_number":
-                        existingProfile.setPhone_number((String) value);
-                        break;
-                    case "opening_hours":
-                        existingProfile.setOpening_hours((String) value);
-                        break;
-                    case "street":
-                        existingProfile.setStreet((String) value);
-                        break;
-                    case "country":
-                        existingProfile.setCountry((String) value);
-                        break;
-                    case "city":
-                        existingProfile.setCity((String) value);
-                        break;
-                    case "street_number":
-                        existingProfile.setStreet_number((String) value);
-                        break;
-                    case "homepage":
-                        existingProfile.setHomepage((String) value);
-                        break;
-                    case "postal_code":
-                        existingProfile.setPostal_code((Integer) value);
-                        break;
-                    case "discriminator":
-                        existingProfile.setDiscriminator((String) value);
-                        break;
-                    case "firstname":
-                        existingProfile.setFirstname((String) value);
-                        break;
-                    case "lastname":
-                        existingProfile.setLastname((String) value);
-                        break;
-                    default:
-                        // Ignore any unknown fields
-                        break;
-                }
+        // Update each field that was specified in the request body
+        for (Map.Entry<String, Object> entry : updates.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            switch (key) {
+                case "username":
+                    existingProfile.setUsername((String) value);
+                    break;
+                case "profile_picture":
+                    existingProfile.setProfile_picture((byte[]) value);
+                    break;
+                case "description":
+                    existingProfile.setDescription((String) value);
+                    break;
+                case "password":
+                    existingProfile.setPassword((String) value);
+                    break;
+                case "creation_date":
+                    existingProfile.setCreation_date((Date) value);
+                    break;
+                case "email":
+                    existingProfile.setEmail((String) value);
+                    break;
+                case "birthday":
+                    existingProfile.setBirthday((Date) value);
+                    break;
+                case "phone_number":
+                    existingProfile.setPhone_number((String) value);
+                    break;
+                case "opening_hours":
+                    existingProfile.setOpening_hours((String) value);
+                    break;
+                case "street":
+                    existingProfile.setStreet((String) value);
+                    break;
+                case "country":
+                    existingProfile.setCountry((String) value);
+                    break;
+                case "city":
+                    existingProfile.setCity((String) value);
+                    break;
+                case "street_number":
+                    existingProfile.setStreet_number((String) value);
+                    break;
+                case "homepage":
+                    existingProfile.setHomepage((String) value);
+                    break;
+                case "postal_code":
+                    existingProfile.setPostal_code((Integer) value);
+                    break;
+                case "discriminator":
+                    existingProfile.setDiscriminator((String) value);
+                    break;
+                case "firstname":
+                    existingProfile.setFirstname((String) value);
+                    break;
+                case "lastname":
+                    existingProfile.setLastname((String) value);
+                    break;
+                default:
+                    // Ignore any unknown fields
+                    break;
             }
         }
 
@@ -125,7 +123,6 @@ public class ProfileService {
     @GetMapping("/all/ids")
     public ResponseEntity<List<Integer>> getProfileIds() {
         List<Profile> profiles = profileRepository.findAll();
-
         List<Integer> ids = profiles.stream().map(Profile::getProfile_id).collect(Collectors.toList());
         return ResponseEntity.ok(ids);
     }

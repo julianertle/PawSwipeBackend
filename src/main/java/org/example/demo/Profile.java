@@ -1,7 +1,6 @@
 package org.example.demo;
 import javax.persistence.*;
 import java.sql.Date;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "profile")
@@ -9,14 +8,12 @@ import java.time.LocalDate;
 //@DiscriminatorColumn(name = "discriminator")
 public class Profile {
 
-
     public int getProfile_id() {
         return profile_id;
     }
 
     public void setProfile_id(int profile_id) {
         this.profile_id = profile_id;
-
     }
 
     public String getUsername() {
@@ -41,7 +38,6 @@ public class Profile {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
-
     }
 
     public int getIs_admin() {
@@ -76,37 +72,29 @@ public class Profile {
         this.password = password;
     }
 
-
     public Date getCreation_date() {
         return creation_date;
     }
 
     public void setCreation_date(Date creation_date) {
         this.creation_date = creation_date;
-
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setEmail(String email) {
+        this.email = email;
     }
-
-
-    public String getCountry() {
-        return country;
 
     public Date getBirthday() {
         return birthday;
-
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
-
 
     public String getPhone_number() {
         return phone_number;
@@ -122,7 +110,6 @@ public class Profile {
 
     public void setOpening_hours(String opening_hours) {
         this.opening_hours = opening_hours;
-
     }
 
     public String getStreet() {
@@ -133,22 +120,21 @@ public class Profile {
         this.street = street;
     }
 
-    public String getStreetnumber() {
-        return streetnumber;
+    public String getCountry() {
+        return country;
     }
 
-    public void setStreetnumber(String streetnumber) {
-        this.streetnumber = streetnumber;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public LocalDate getBirthday() {
-        return birthday;
+    public String getCity() {
+        return city;
     }
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
+    public void setCity(String city) {
+        this.city = city;
     }
-
 
     public String getStreet_number() {
         return street_number;
@@ -156,7 +142,6 @@ public class Profile {
 
     public void setStreet_number(String street_number) {
         this.street_number = street_number;
-
     }
 
     public String getHomepage() {
@@ -167,7 +152,6 @@ public class Profile {
         this.homepage = homepage;
     }
 
-
     public int getPostal_code() {
         return postal_code;
     }
@@ -176,7 +160,6 @@ public class Profile {
         this.postal_code = postal_code;
     }
 
-
     public String getDiscriminator() {
         return discriminator;
     }
@@ -184,7 +167,6 @@ public class Profile {
     public void setDiscriminator(String discriminator) {
         this.discriminator = discriminator;
     }
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -206,10 +188,8 @@ public class Profile {
     @Column(name = "profile_picture")
     private byte[] profile_picture;
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "password", nullable = false)
     private String password;
@@ -229,17 +209,11 @@ public class Profile {
     @Column(name = "opening_hours")
     private String opening_hours;
 
-    @Column(name = "creationdate")
-    private LocalDate creationdate;
-
-    @Column(name = "phonenumber")
-    private String phonenumber;
+    @Column(name = "street")
+    private String street;
 
     @Column(name = "country")
     private String country;
-
-    @Column(name = "postalcode")
-    private String postalcode;
 
     @Column(name = "city")
     private String city;
@@ -250,21 +224,15 @@ public class Profile {
     @Column(name = "homepage")
     private String homepage;
 
-
     @Column(name = "postal_code")
     private int postal_code;
 
     @Column(name = "discriminator") //, insertable = false, updatable = false
-
     private String discriminator;
-
-    @Column(name = "email", nullable = false)
-    private String email;
 
     // Constructors
     public Profile() {
     }
-
 
     public Profile(String username, byte[] profile_picture, String description, String password, Date creation_date,
                    String email, Date birthday, String phone_number, String opening_hours,
@@ -286,7 +254,5 @@ public class Profile {
         this.postal_code = postal_code;
         this.firstname = firstname;
         this.lastname = lastname;
-
     }
-
 }
