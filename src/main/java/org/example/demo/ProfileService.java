@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.sql.Date;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -39,7 +40,9 @@ public class ProfileService {
                     existingProfile.setUsername((String) value);
                     break;
                 case "profile_picture":
-                    existingProfile.setProfile_picture((byte[]) value);
+                    String base64String = (String) value;
+                    byte[] pictureData = Base64.getDecoder().decode(base64String);
+                    existingProfile.setProfile_picture(pictureData);
                     break;
                 case "description":
                     existingProfile.setDescription((String) value);
