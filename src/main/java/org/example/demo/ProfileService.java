@@ -11,6 +11,14 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * The {@link ProfileService} class is a RESTful API controller responsible for handling profile-related operations.
+ * It provides endpoints for creating, updating, retrieving, and deleting profiles.
+ * The class is annotated with Spring's @RestController and @RequestMapping annotations to define the base URL
+ * ("/profile") for all endpoints within this controller.
+ *
+ * @author Julian Ertle
+ */
 @RestController
 @RequestMapping("/profile")
 public class ProfileService {
@@ -18,13 +26,17 @@ public class ProfileService {
     @Autowired
     private ProfileRepository profileRepository;
 
-
+    /**
+     * This endpoint allows you to create a new profile by sending a POST request to "/profile/create".
+     * The request body should contain a JSON representation of the profile to be created.
+     * @param profile The profile object to create.
+     * @return ResponseEntity<Void> indicating the success or failure of the operation.
+     */
     @PostMapping("/create")
     public ResponseEntity<Void> createProfile(@RequestBody Profile profile) {
         profileRepository.save(profile);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") int id, @RequestBody Map<String, Object> updates) {
