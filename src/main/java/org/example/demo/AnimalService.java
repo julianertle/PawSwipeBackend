@@ -19,6 +19,8 @@ import java.util.stream.Collectors;
  * The class is annotated with Spring's @RestController and @RequestMapping annotations to define the base URL
  * ("/animal") for all endpoints within this controller.
  * It uses the {@link AnimalRepository} bean for accessing the animal data from the database.
+ *
+ * @author Julian Ertle
  */
 @RestController
 @RequestMapping("/animal")
