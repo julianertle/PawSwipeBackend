@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "animal")
-public class Animal {
+public class Animal {    //@todo javadoc
 
     @javax.persistence.Id
     @Id
@@ -19,7 +19,6 @@ public class Animal {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id", referencedColumnName = "profile_id", nullable = false)
     private Profile profile_id;
-
 
     @Column(name = "species", length = 50)
     private String species;
@@ -60,28 +59,8 @@ public class Animal {
     @Column(name = "picture_five")
     private byte[] picture_five;
 
-
     public Animal() {
         // no-arg constructor needed by JPA
-    }
-
-    public Animal(Profile profile_id, String species, String name, LocalDate birthday, String illness, String description,
-                  String breed, String color, String gender, byte[] picture_one, byte[] picture_two, byte[] picture_three, byte[] picture_four, byte[] picture_five) {
-        this.profile_id = profile_id;
-        this.species = species;
-        this.name = name;
-        this.birthday = birthday;
-        this.illness = illness;
-        this.description = description;
-        this.breed = breed;
-        this.color = color;
-        this.gender = gender;
-        this.picture_one = picture_one;
-        this.picture_two = picture_two;
-        this.picture_three = picture_three;
-        this.picture_four = picture_four;
-        this.picture_five = picture_five;
-
     }
 
     public int getAnimal_id() {
@@ -206,5 +185,24 @@ public class Animal {
 
     public void setPicture_five(byte[] picture_five) {
         this.picture_five = picture_five;
+    }
+
+    public Animal(Profile profile_id, String species, String name, LocalDate birthday, String illness, String description,
+                  String breed, String color, String gender, byte[] picture_one, byte[] picture_two, byte[] picture_three, byte[] picture_four, byte[] picture_five) {
+        this.profile_id = profile_id;
+        this.species = species;
+        this.name = name;
+        this.birthday = birthday;
+        this.illness = illness;
+        this.description = description;
+        this.breed = breed;
+        this.color = color;
+        this.gender = gender;
+        this.picture_one = picture_one;
+        this.picture_two = picture_two;
+        this.picture_three = picture_three;
+        this.picture_four = picture_four;
+        this.picture_five = picture_five;
+
     }
 }
