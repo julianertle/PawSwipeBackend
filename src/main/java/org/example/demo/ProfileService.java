@@ -38,6 +38,19 @@ public class ProfileService {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    /**
+     * This endpoint allows you to update an existing profile with the specified ID.
+     * The profile ID should be provided in the URL path, and the fields to update should be included in the request
+     * body as a map of key-value pairs.
+     *
+     * @param id      The ID of the profile to update.
+     * @param updates A map containing the fields to update and their new values.
+     * @return ResponseEntity<Profile> indicating the success or failure of the operation.
+     *         - If the profile is successfully updated, it returns a response with HTTP status code 200 (OK)
+     *           and the updated profile in the response body.
+     *         - If the specified profile does not exist, it returns a response with HTTP status code 404 (Not Found).
+     *         - If an error occurs during the update process, it returns an appropriate error response.
+     */
     @PutMapping("/update/{id}")
     public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") int id, @RequestBody Map<String, Object> updates) {
 
@@ -115,6 +128,17 @@ public class ProfileService {
         return ResponseEntity.ok(updatedProfile);
     }
 
+    /**
+     * This endpoint allows you to retrieve a profile based on the specified ID.
+     * The profile ID should be provided in the URL path.
+     *
+     * @param id The ID of the profile to retrieve.
+     * @return ResponseEntity<Profile> indicating the success or failure of the operation.
+     *         - If the profile is found, it returns a response with HTTP status code 200 (OK)
+     *           and the profile object in the response body.
+     *         - If the specified profile does not exist, it returns a response with HTTP status code 404 (Not Found).
+     *         - If an error occurs during the retrieval process, it returns an appropriate error response.
+     */
     @GetMapping("/id/{id}")
     public ResponseEntity<Profile> getProfile(@PathVariable("id") Integer id) {
         Optional<Profile> profileOptional = profileRepository.findById(id);
@@ -125,6 +149,17 @@ public class ProfileService {
         }
     }
 
+    /**
+     * This endpoint allows you to retrieve a profile based on the specified email.
+     * The email should be provided in the URL path.
+     *
+     * @param email The email of the profile to retrieve.
+     * @return ResponseEntity<Profile> indicating the success or failure of the operation.
+     *         - If the profile is found, it returns a response with HTTP status code 200 (OK)
+     *           and the profile object in the response body.
+     *         - If the specified profile does not exist, it returns a response with HTTP status code 404 (Not Found).
+     *         - If an error occurs during the retrieval process, it returns an appropriate error response.
+     */
     @GetMapping("/email/{email}")
     public ResponseEntity<Profile> getProfileByEmail(@PathVariable String email) {
         Profile profile = profileRepository.findByEmail(email);
@@ -135,6 +170,15 @@ public class ProfileService {
         }
     }
 
+    /**
+     * This endpoint allows you to retrieve the IDs of all profiles.
+     *
+     * @return ResponseEntity<List<Integer>> indicating the success or failure of the operation.
+     *         - If the profiles are found, it returns a response with HTTP status code 200 (OK)
+     *           and a list of profile IDs in the response body.
+     *         - If no profiles are found, it returns an empty list in the response body.
+     *         - If an error occurs during the retrieval process, it returns an appropriate error response.
+     */
     @GetMapping("/all/ids")
     public ResponseEntity<List<Integer>> getProfileIds() {
         List<Profile> profiles = profileRepository.findAll();
@@ -142,6 +186,16 @@ public class ProfileService {
         return ResponseEntity.ok(ids);
     }
 
+    /**
+     * This endpoint allows you to delete a profile based on the specified ID.
+     * The profile ID should be provided in the URL path.
+     *
+     * @param id The ID of the profile to delete.
+     * @return ResponseEntity<Void> indicating the success or failure of the operation.
+     *         - If the profile is found and successfully deleted, it returns a response with HTTP status code 200 (OK).
+     *         - If the specified profile does not exist, it returns a response with HTTP status code 404 (Not Found).
+     *         - If an error occurs during the deletion process, it returns an appropriate error response.
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProfile(@PathVariable("id") int id) {
         Optional<Profile> profileOptional = profileRepository.findById(id);
