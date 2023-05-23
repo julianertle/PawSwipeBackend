@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.Base64;
 import java.util.List;
@@ -15,6 +13,13 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * {@link AnimalService} is a RESTful API controller class that handles operations related to animals.
+ * This class provides endpoints for creating, updating, retrieving, and deleting animals.
+ * The class is annotated with Spring's @RestController and @RequestMapping annotations to define the base URL
+ * ("/animal") for all endpoints within this controller.
+ * It uses the {@link AnimalRepository} bean for accessing the animal data from the database.
+ */
 @RestController
 @RequestMapping("/animal")
 public class AnimalService {
@@ -22,6 +27,14 @@ public class AnimalService {
     @Autowired
     private AnimalRepository animalRepository;
 
+    /**
+     * This endpoint allows you to create a new animal by providing the animal object in the request body.
+     *
+     * @param animal The animal object containing the details of the animal to be created.
+     * @return ResponseEntity<Void> indicating the success or failure of the operation.
+     *         - If the animal is created successfully, it returns a response with HTTP status code 201 (Created).
+     *         - If an error occurs during the creation process, it throws an AnimalServiceException.
+     */
     @PostMapping("/create")
     public ResponseEntity<Void> createAnimal(@RequestBody Animal animal) {
         try {
@@ -32,7 +45,20 @@ public class AnimalService {
         }
     }
 
-    //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    /**
+     * This endpoint allows you to update an existing animal based on the specified ID.
+     * The animal ID should be provided in the URL path, and the updates should be provided
+     * in the request body as a map of field names and their corresponding values.
+     *
+     * @param id      The ID of the animal to update.
+     * @param updates A map containing the field names and their corresponding updated values.
+     * @return ResponseEntity<Animal> indicating the success or failure of the operation.
+     *         - If the animal is updated successfully, it returns a response with HTTP status code 200 (OK)
+     *           and the updated animal object in the response body.
+     *         - If the specified animal does not exist, it returns a response with HTTP status code 404 (Not Found).
+     *         - If the provided update values are invalid or an error occurs during the update process,
+     *           it throws an AnimalServiceException.
+     */
     @PutMapping("/update/{id}")
     public ResponseEntity<Animal> updateAnimal(@PathVariable(value = "id") int id, @RequestBody Map<String, Object> updates) {
         try {
@@ -117,9 +143,17 @@ public class AnimalService {
     }
 
 
-
-
-
+    /**
+     * This endpoint allows you to retrieve an animal based on the specified ID.
+     * The animal ID should be provided in the URL path.
+     *
+     * @param id The ID of the animal to retrieve.
+     * @return ResponseEntity<Animal> indicating the success or failure of the operation.
+     *         - If the animal is found, it returns a response with HTTP status code 200 (OK)
+     *           and the animal object in the response body.
+     *         - If the specified animal does not exist, it returns a response with HTTP status code 404 (Not Found).
+     *         - If an error occurs during the retrieval process, it throws an AnimalServiceException.
+     */
     @GetMapping("/id/{id}")
     public ResponseEntity<Animal> getAnimal(@PathVariable("id") int id)  {
         try {
@@ -134,6 +168,15 @@ public class AnimalService {
         }
     }
 
+    /**
+     * This endpoint allows you to retrieve the IDs of all animals.
+     *
+     * @return ResponseEntity<List<Integer>> indicating the success or failure of the operation.
+     *         - If the animals are found, it returns a response with HTTP status code 200 (OK)
+     *           and a list of animal IDs in the response body.
+     *         - If no animals are found, it returns an empty list in the response body.
+     *         - If an error occurs during the retrieval process, it throws an AnimalServiceException.
+     */
     @GetMapping("/all/ids")
     public ResponseEntity<List<Integer>> getAnimalIds() throws AnimalServiceException {
         List<Animal> animals;
@@ -142,6 +185,16 @@ public class AnimalService {
         return ResponseEntity.ok(ids);
     }
 
+    /**
+     * This endpoint allows you to delete an animal based on the specified ID.
+     * The animal ID should be provided in the URL path.
+     *
+     * @param id The ID of the animal to delete.
+     * @return ResponseEntity<Void> indicating the success or failure of the operation.
+     *         - If the animal is found and successfully deleted, it returns a response with HTTP status code 200 (OK).
+     *         - If the specified animal does not exist, it returns a response with HTTP status code 404 (Not Found).
+     *         - If an error occurs during the deletion process, it returns an appropriate error response.
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteAnimal(@PathVariable("id") int id) {
         try {

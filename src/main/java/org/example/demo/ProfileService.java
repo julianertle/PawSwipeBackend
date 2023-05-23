@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
  * It provides endpoints for creating, updating, retrieving, and deleting profiles.
  * The class is annotated with Spring's @RestController and @RequestMapping annotations to define the base URL
  * ("/profile") for all endpoints within this controller.
+ * It uses the {@link ProfileRepository} bean for accessing the animal data from the database.
  *
  * @author Julian Ertle
  */
