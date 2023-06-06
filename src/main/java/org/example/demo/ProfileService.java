@@ -109,7 +109,7 @@ public class ProfileService {
                     existingProfile.setHomepage((String) value);
                     break;
                 case "postal_code":
-                    existingProfile.setPostal_code((Integer) value);
+                    existingProfile.setPostal_code((String) value);
                     break;
                 case "discriminator":
                     existingProfile.setDiscriminator((String) value);
