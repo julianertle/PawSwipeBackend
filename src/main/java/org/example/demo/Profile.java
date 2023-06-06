@@ -65,7 +65,7 @@ public class Profile {   //@todo javadoc
     private String homepage;
 
     @Column(name = "postal_code")
-    private int postal_code;
+    private String postal_code;
 
     @Column(name = "discriminator") //, insertable = false, updatable = false
     private String discriminator;
@@ -213,11 +213,11 @@ public class Profile {   //@todo javadoc
         this.homepage = homepage;
     }
 
-    public int getPostal_code() {
+    public String getPostal_code() {
         return postal_code;
     }
 
-    public void setPostal_code(int postal_code) {
+    public void setPostal_code(String postal_code) {
         this.postal_code = postal_code;
     }
 
@@ -235,7 +235,7 @@ public class Profile {   //@todo javadoc
 
     public Profile(String username, byte[] profile_picture, String description, String password, Date creation_date,
                    String email, Date birthday, String phone_number, String opening_hours,
-                   String street, String country, String city, String street_number, String homepage, int postal_code, String firstname, String lastname) {
+                   String street, String country, String city, String street_number, String homepage, String postal_code, String firstname, String lastname) {
         this.username = username;
         this.profile_picture = profile_picture;
         this.description = description;
