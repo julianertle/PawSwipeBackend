@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.EntityNotFoundException;
+
 @RestController
 @RequestMapping("/liked-animals")
 public class LikedAnimalController {
@@ -20,13 +22,20 @@ public class LikedAnimalController {
 
     @PostMapping("/like")
     public ResponseEntity<String> likeAnimal(@RequestBody LikedAnimalRequest likedAnimalRequest) {
-        int profileId = likedAnimalRequest.getProfileId();
-        int animalId = likedAnimalRequest.getAnimalId();
+        try {
+            int profileId = likedAnimalRequest.getProfileId();
+            int animalId = likedAnimalRequest.getAnimalId();
 
-        // Add your logic to handle the 'like' action
-        likedAnimalService.likeAnimal(profileId, animalId);
+            // Add your logic to handle the 'like' action
+            likedAnimalService.likeAnimal(profileId, animalId);
 
-        // Return a response with a success message
-        return ResponseEntity.status(HttpStatus.OK).body("Animal liked successfully");
+            // Return a response with a success message
+            return ResponseEntity.status(HttpStatus.OK).body("Animal liked successfully");
+        }
+        catch (Exception e) {
+            // Handle other exceptions and return a general error message
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
+
 }
