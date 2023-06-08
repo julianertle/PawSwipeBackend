@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "animal")
-public class Animal {    //@todo javadoc
+public class  Animal {    //@todo javadoc
 
     @javax.persistence.Id
     @Id
