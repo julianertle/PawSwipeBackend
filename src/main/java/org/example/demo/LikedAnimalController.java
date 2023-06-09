@@ -34,14 +34,16 @@ public class LikedAnimalController {
 
     @DeleteMapping("/unlike")
     public ResponseEntity<String> unlikeAnimal(@RequestBody LikedAnimalRequest likedAnimalRequest) {
-
+        try {
             int profileId = likedAnimalRequest.getProfileId();
             int animalId = likedAnimalRequest.getAnimalId();
 
             likedAnimalService.unlikeAnimal(profileId, animalId);
 
             return ResponseEntity.status(HttpStatus.OK).body("Animal unliked successfully");
-
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
 

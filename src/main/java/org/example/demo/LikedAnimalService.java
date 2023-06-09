@@ -1,4 +1,5 @@
 package org.example.demo;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,10 +30,14 @@ public class LikedAnimalService {
     }
 
     @Transactional
-    public void unlikeAnimal(int profileId, int animalId) {
-
-        likedAnimalRepository.deleteByProfileIdAndAnimalId(profileId,animalId);
+    public void unlikeAnimal(int profileId, int animalId) throws NotFoundException {
+        LikedAnimal likedAnimal = likedAnimalRepository.findByProfileIdAndAnimalId(profileId, animalId);
+        if (likedAnimal == null) {
+            throw new NotFoundException("Liked animal not found for profileId: " + profileId + " and animalId: " + animalId);
+        }
+        likedAnimalRepository.deleteByProfileIdAndAnimalId(profileId, animalId);
     }
+
 
 }
 
