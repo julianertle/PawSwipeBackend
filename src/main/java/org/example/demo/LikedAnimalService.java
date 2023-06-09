@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
@@ -38,7 +40,15 @@ public class LikedAnimalService {
         likedAnimalRepository.deleteByProfileIdAndAnimalId(profileId, animalId);
     }
 
+    public List<Integer> getLikedAnimalIds(int profileId) {
+        List<LikedAnimal> likedAnimals = likedAnimalRepository.findByProfileId(profileId);
+        List<Integer> likedAnimalIds = new ArrayList<>();
 
+        for (LikedAnimal likedAnimal : likedAnimals) {
+            likedAnimalIds.add(likedAnimal.getAnimal().getAnimal_id());
+        }
+        return likedAnimalIds;
+    }
 }
 
 
