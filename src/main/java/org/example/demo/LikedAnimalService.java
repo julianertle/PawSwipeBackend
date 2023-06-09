@@ -2,6 +2,9 @@ package org.example.demo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
+
 @Service
 public class LikedAnimalService {
     private final LikedAnimalRepository likedAnimalRepository;
@@ -24,6 +27,13 @@ public class LikedAnimalService {
 
         likedAnimalRepository.save(likedAnimal);
     }
+
+    @Transactional
+    public void unlikeAnimal(int profileId, int animalId) {
+
+        likedAnimalRepository.deleteByProfileIdAndAnimalId(profileId,animalId);
+    }
+
 }
 
 
