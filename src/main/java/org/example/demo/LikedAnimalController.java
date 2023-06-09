@@ -19,24 +19,22 @@ public class LikedAnimalController {
 
     @PostMapping("/like")
     public ResponseEntity<String> likeAnimal(@RequestBody LikedAnimalRequest likedAnimalRequest) {
-        try {
-            int profileId = likedAnimalRequest.getProfileId();
-            int animalId = likedAnimalRequest.getAnimalId();
+
+            int profileId = likedAnimalRequest.getProfile_Id();
+            int animalId = likedAnimalRequest.getAnimal_Id();
 
             likedAnimalService.likeAnimal(profileId, animalId);
 
             return ResponseEntity.status(HttpStatus.OK).body("Animal liked successfully");
-        }
-        catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
-        }
+
+
     }
 
     @DeleteMapping("/unlike")
     public ResponseEntity<String> unlikeAnimal(@RequestBody LikedAnimalRequest likedAnimalRequest) {
         try {
-            int profileId = likedAnimalRequest.getProfileId();
-            int animalId = likedAnimalRequest.getAnimalId();
+            int profileId = likedAnimalRequest.getProfile_Id();
+            int animalId = likedAnimalRequest.getAnimal_Id();
 
             likedAnimalService.unlikeAnimal(profileId, animalId);
 
