@@ -32,7 +32,7 @@ public class LikedAnimalService {
     }
 
     @Transactional
-    public void unlikeAnimal(int profileId, int animalId) throws NotFoundException {
+    public void dislikeAnimal(int profileId, int animalId) throws NotFoundException {
         LikedAnimal likedAnimal = likedAnimalRepository.findByProfileIdAndAnimalId(profileId, animalId);
         if (likedAnimal == null) {
             throw new NotFoundException("Liked animal not found for profileId: " + profileId + " and animalId: " + animalId);
