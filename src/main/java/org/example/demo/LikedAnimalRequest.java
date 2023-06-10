@@ -1,29 +1,29 @@
 package org.example.demo;
 public class LikedAnimalRequest {
-    private int profile_Id;
-    private int animal_Id;
+    private int profile_id;
+    private int animal_id;
 
     public LikedAnimalRequest() {
     }
 
-    public LikedAnimalRequest(int profile_Id, int animal_Id) {
-        this.profile_Id = profile_Id;
-        this.animal_Id = animal_Id;
+    public LikedAnimalRequest(int profile_id, int animal_id) {
+        this.profile_id = profile_id;
+        this.animal_id = animal_id;
     }
 
-    public int getProfile_Id() {
-        return profile_Id;
+    public int getProfile_id() {
+        return profile_id;
     }
 
-    public void setProfile_Id(int profile_Id) {
-        this.profile_Id = profile_Id;
+    public void setProfile_id(int profile_id) {
+        this.profile_id = profile_id;
     }
 
-    public int getAnimal_Id() {
-        return animal_Id;
+    public int getAnimal_id() {
+        return animal_id;
     }
 
-    public void setAnimal_Id(int animal_Id) {
-        this.animal_Id = animal_Id;
+    public void setAnimal_id(int animal_id) {
+        this.animal_id = animal_id;
     }
 }

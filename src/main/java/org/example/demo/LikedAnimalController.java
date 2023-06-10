@@ -20,8 +20,8 @@ public class LikedAnimalController {
     @PostMapping("/like")
     public ResponseEntity<String> likeAnimal(@RequestBody LikedAnimalRequest likedAnimalRequest) {
 
-            int profileId = likedAnimalRequest.getProfile_Id();
-            int animalId = likedAnimalRequest.getAnimal_Id();
+            int profileId = likedAnimalRequest.getProfile_id();
+            int animalId = likedAnimalRequest.getAnimal_id();
 
             likedAnimalService.likeAnimal(profileId, animalId);
 
@@ -33,8 +33,8 @@ public class LikedAnimalController {
     @DeleteMapping("/unlike")
     public ResponseEntity<String> unlikeAnimal(@RequestBody LikedAnimalRequest likedAnimalRequest) {
         try {
-            int profileId = likedAnimalRequest.getProfile_Id();
-            int animalId = likedAnimalRequest.getAnimal_Id();
+            int profileId = likedAnimalRequest.getProfile_id();
+            int animalId = likedAnimalRequest.getAnimal_id();
 
             likedAnimalService.unlikeAnimal(profileId, animalId);
 
