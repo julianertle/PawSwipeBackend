@@ -105,29 +105,19 @@ public class AnimalService {
                         existingAnimal.setGender((String) value);
                         break;
                     case "picture_one":
-                        String base64StringOne = (String) value;
-                        byte[] pictureDataOne = Base64.getDecoder().decode(base64StringOne);
-                        existingAnimal.setPicture_one(pictureDataOne);
+                        existingAnimal.setPicture_one((String) value);
                         break;
                     case "picture_two":
-                        String base64StringTwo = (String) value;
-                        byte[] pictureDataTwo = Base64.getDecoder().decode(base64StringTwo);
-                        existingAnimal.setPicture_two(pictureDataTwo);
+                        existingAnimal.setPicture_two((String) value);
                         break;
                     case "picture_three":
-                        String base64StringThree = (String) value;
-                        byte[] pictureDataThree = Base64.getDecoder().decode(base64StringThree);
-                        existingAnimal.setPicture_three(pictureDataThree);
+                        existingAnimal.setPicture_three((String) value);
                         break;
                     case "picture_four":
-                        String base64StringFour = (String) value;
-                        byte[] pictureDataFour = Base64.getDecoder().decode(base64StringFour);
-                        existingAnimal.setPicture_four(pictureDataFour);
+                        existingAnimal.setPicture_four((String) value);
                         break;
                     case "picture_five":
-                        String base64StringFive = (String) value;
-                        byte[] pictureDataFive = Base64.getDecoder().decode(base64StringFive);
-                        existingAnimal.setPicture_five(pictureDataFive);
+                        existingAnimal.setPicture_five((String) value);
                         break;
 
                     default:
