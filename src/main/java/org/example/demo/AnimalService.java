@@ -205,7 +205,7 @@ public class AnimalService {
     /**
      * This endpoint allows you to filter animals based on the provided filters.
      * The filters are passed as query parameters in the request URL.
-     * Supported filters include species, color, birthday, illness, breed, and gender.
+     * Supported filters include species, color, birthday, illness, breed, profile_id, and gender.
      * The endpoint retrieves all animals from the animal repository and applies the specified filters.
      * Animals that match all the provided filters are returned in the response.
      *
@@ -274,6 +274,13 @@ public class AnimalService {
                     case "gender":
                         filteredAnimals = filteredAnimals.stream()
                                 .filter(animal -> animal.getGender().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "profile_id":
+                        Long profileIdFilter = Long.parseLong(filterValue);
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getProfile_id().getProfile_id() == profileIdFilter)
                                 .collect(Collectors.toList());
                         break;
 
