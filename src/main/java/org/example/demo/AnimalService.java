@@ -242,12 +242,22 @@ public class AnimalService {
                                 .collect(Collectors.toList());
                         break;
 
-                    case "birthday":
-                        LocalDate birthday = LocalDate.parse(filterValue);
+                    case "age_min":
+                        int minAge = Integer.parseInt(filterValue);
+                        LocalDate minDate = LocalDate.now().minusYears(minAge);
                         filteredAnimals = filteredAnimals.stream()
-                                .filter(animal -> animal.getBirthday().equals(birthday))
+                                .filter(animal -> animal.getBirthday().isBefore(minDate))
                                 .collect(Collectors.toList());
                         break;
+
+                    case "age_max":
+                        int maxAge = Integer.parseInt(filterValue);
+                        LocalDate maxDate = LocalDate.now().minusYears(maxAge).plusDays(1);
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getBirthday().isAfter(maxDate))
+                                .collect(Collectors.toList());
+                        break;
+
 
                     case "illness":
                         filteredAnimals = filteredAnimals.stream()
