@@ -68,9 +68,7 @@ public class ProfileService {
                     existingProfile.setUsername((String) value);
                     break;
                 case "profile_picture":
-                    String base64String = (String) value;
-                    byte[] pictureData = Base64.getDecoder().decode(base64String);
-                    existingProfile.setProfile_picture(pictureData);
+                    existingProfile.setProfile_picture((String) value);
                     break;
                 case "description":
                     existingProfile.setDescription((String) value);

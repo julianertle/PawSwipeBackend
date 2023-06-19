@@ -1,6 +1,7 @@
 package org.example.demo;
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Base64;
 
 @Entity
 @Table(name = "profile")
@@ -26,7 +27,7 @@ public class Profile {   //@todo javadoc
     private int is_admin;
 
     @Column(name = "profile_picture")
-    private byte[] profile_picture;
+    private String profile_picture;
 
     @Column(name = "description")
     private String description;
@@ -109,11 +110,11 @@ public class Profile {   //@todo javadoc
         this.is_admin = is_admin;
     }
 
-    public byte[] getProfile_picture() {
+    public String getProfile_picture() {
         return profile_picture;
     }
 
-    public void setProfile_picture(byte[] profile_picture) {
+    public void setProfile_picture(String profile_picture) {
         this.profile_picture = profile_picture;
     }
 
@@ -233,7 +234,7 @@ public class Profile {   //@todo javadoc
     public Profile() {
     }
 
-    public Profile(String username, byte[] profile_picture, String description, String password, Date creation_date,
+    public Profile(String username, String profile_picture, String description, String password, Date creation_date,
                    String email, Date birthday, String phone_number, String opening_hours,
                    String street, String country, String city, String street_number, String homepage, String postal_code, String firstname, String lastname) {
         this.username = username;

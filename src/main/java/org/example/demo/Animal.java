@@ -4,10 +4,11 @@ import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Base64;
 
 @Entity
 @Table(name = "animal")
-public class Animal {    //@todo javadoc
+public class  Animal {    //@todo javadoc
 
     @javax.persistence.Id
     @Id
@@ -45,19 +46,19 @@ public class Animal {    //@todo javadoc
     private String gender;
 
     @Column(name = "picture_one")
-    private byte[] picture_one;
+    private String picture_one;
 
     @Column(name = "picture_two")
-    private byte[] picture_two;
+    private String picture_two;
 
     @Column(name = "picture_three")
-    private byte[] picture_three;
+    private String picture_three;
 
     @Column(name = "picture_four")
-    private byte[] picture_four;
+    private String picture_four;
 
     @Column(name = "picture_five")
-    private byte[] picture_five;
+    private String picture_five;
 
     public Animal() {
         // no-arg constructor needed by JPA
@@ -147,48 +148,48 @@ public class Animal {    //@todo javadoc
         this.animal_id = animalId;
     }
 
-    public byte[] getPicture_one() {
+    public String getPicture_one() {
         return picture_one;
     }
 
-    public void setPicture_one(byte[] picture_one) {
+    public void setPicture_one(String picture_one) {
         this.picture_one = picture_one;
     }
 
-    public byte[] getPicture_two() {
+    public String getPicture_two() {
         return picture_two;
     }
 
-    public void setPicture_two(byte[] picture_two) {
+    public void setPicture_two(String picture_two) {
         this.picture_two = picture_two;
     }
 
-    public byte[] getPicture_three() {
+    public String getPicture_three() {
         return picture_three;
     }
 
-    public void setPicture_three(byte[] picture_three) {
+    public void setPicture_three(String picture_three) {
         this.picture_three = picture_three;
     }
 
-    public byte[] getPicture_four() {
+    public String getPicture_four() {
         return picture_four;
     }
 
-    public void setPicture_four(byte[] picture_four) {
+    public void setPicture_four(String picture_four) {
         this.picture_four = picture_four;
     }
 
-    public byte[] getPicture_five() {
+    public String getPicture_five() {
         return picture_five;
     }
 
-    public void setPicture_five(byte[] picture_five) {
+    public void setPicture_five(String picture_five) {
         this.picture_five = picture_five;
     }
 
     public Animal(Profile profile_id, String species, String name, LocalDate birthday, String illness, String description,
-                  String breed, String color, String gender, byte[] picture_one, byte[] picture_two, byte[] picture_three, byte[] picture_four, byte[] picture_five) {
+                  String breed, String color, String gender, String picture_one, String picture_two, String picture_three, String picture_four, String picture_five) {
         this.profile_id = profile_id;
         this.species = species;
         this.name = name;
@@ -203,6 +204,5 @@ public class Animal {    //@todo javadoc
         this.picture_three = picture_three;
         this.picture_four = picture_four;
         this.picture_five = picture_five;
-
     }
 }
