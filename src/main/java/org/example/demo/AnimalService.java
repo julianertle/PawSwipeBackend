@@ -201,4 +201,81 @@ public class AnimalService {
             throw new AnimalServiceException("Error deleting animal: " + ex.getMessage());
         }
     }
+
+    /**
+     * This endpoint allows you to filter animals based on the provided filters.
+     * The filters are passed as query parameters in the request URL.
+     * Supported filters include species, color, birthday, illness, breed, and gender.
+     * The endpoint retrieves all animals from the animal repository and applies the specified filters.
+     * Animals that match all the provided filters are returned in the response.
+     *
+     * @param filters A map containing the filter criteria as key-value pairs.
+     *                The keys represent the filter names, and the values represent the filter values.
+     *                The supported filter names are species, color, birthday, illness, breed, and gender.
+     * @return ResponseEntity<List<Animal>> containing the list of animals that match the specified filters.
+     *         - If animals are found, it returns a response with HTTP status code 200 (OK)
+     *           and the list of matching animal objects in the response body.
+     *         - If no animals match the specified filters, it returns an empty list in the response body.
+     * @throws AnimalServiceException if an error occurs during the filtering process.
+     *                                The exception message provides details about the error.
+     */
+    @GetMapping("/filter")
+    public ResponseEntity<List<Animal>> filterAnimals(@RequestParam Map<String, String> filters) {
+        try {
+            List<Animal> filteredAnimals = animalRepository.findAll();
+
+            // Apply filters based on the provided parameters
+            for (Map.Entry<String, String> entry : filters.entrySet()) {
+                String filterName = entry.getKey();
+                String filterValue = entry.getValue();
+
+                switch (filterName) {
+                    case "species":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getSpecies().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "color":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getColor().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "birthday":
+                        LocalDate birthday = LocalDate.parse(filterValue);
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getBirthday().equals(birthday))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "illness":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getIllness().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "breed":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getBreed().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "gender":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getGender().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    default:
+                        // Ignore unknown filter criteria
+                        break;
+                }
+            }
+
+            return ResponseEntity.ok(filteredAnimals);
+        } catch (Exception ex) {
+            throw new AnimalServiceException("Error filtering animals: " + ex.getMessage());
+        }
+    }
 }
