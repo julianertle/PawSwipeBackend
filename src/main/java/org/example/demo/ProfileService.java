@@ -56,7 +56,6 @@ public class ProfileService {
      */
     @PutMapping("/update/{id}")
     public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") int id, @RequestBody Map<String, Object> updates) {
-
         Profile existingProfile = profileRepository.getById(id);
 
         // Update each field that was specified in the request body
@@ -118,6 +117,12 @@ public class ProfileService {
                 case "lastname":
                     existingProfile.setLastname((String) value);
                     break;
+                case "lat":
+                    existingProfile.setLat((Double) value);
+                    break;
+                case "lon":
+                    existingProfile.setLon((Double) value);
+                    break;
                 default:
                     // Ignore any unknown fields
                     break;
@@ -128,6 +133,7 @@ public class ProfileService {
         Profile updatedProfile = profileRepository.save(existingProfile);
         return ResponseEntity.ok(updatedProfile);
     }
+
 
     /**
      * This endpoint allows you to retrieve a profile based on the specified ID.
