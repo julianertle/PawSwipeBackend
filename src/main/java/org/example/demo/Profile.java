@@ -68,6 +68,12 @@ public class Profile {   //@todo javadoc
     @Column(name = "postal_code")
     private String postal_code;
 
+    @Column(name = "lat")
+    private double lat;
+
+    @Column(name = "lon")
+    private double lon;
+
     @Column(name = "discriminator") //, insertable = false, updatable = false
     private String discriminator;
     public int getProfile_id() {
@@ -230,13 +236,31 @@ public class Profile {   //@todo javadoc
         this.discriminator = discriminator;
     }
 
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
+    }
+
+
     // Constructors
     public Profile() {
     }
 
     public Profile(String username, String profile_picture, String description, String password, Date creation_date,
                    String email, Date birthday, String phone_number, String opening_hours,
-                   String street, String country, String city, String street_number, String homepage, String postal_code, String firstname, String lastname) {
+                   String street, String country, String city, String street_number, String homepage, String postal_code,
+                   String firstname, String lastname, double lat, double lon) {
         this.username = username;
         this.profile_picture = profile_picture;
         this.description = description;
@@ -254,5 +278,7 @@ public class Profile {   //@todo javadoc
         this.postal_code = postal_code;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.lat = lat;
+        this.lon = lon;
     }
 }
