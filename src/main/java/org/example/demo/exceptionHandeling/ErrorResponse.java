@@ -1,5 +1,13 @@
 package org.example.demo.exceptionHandeling;
 
+/**
+ * The {@link ErrorResponse} class represents an error response in the RESTful API.
+ * It encapsulates the status, error, message, and exception message of the error response.
+ * The class provides getters and setters for accessing and modifying the error response attributes.
+ * It is used by the exception handling mechanism to generate consistent error responses.
+ *
+ * @author Julian Ertle
+ */
 public class ErrorResponse  {
     private int status;
     private String error;

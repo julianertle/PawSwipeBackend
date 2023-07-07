@@ -1,12 +1,19 @@
 package org.example.demo;
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Base64;
 
+/**
+ * The {@link Profile} class represents a profile entity.
+ * It is mapped to the "profile" table in the database.
+ * This class contains properties representing various attributes of a profile, such as username, first name,
+ * last name, email, etc.
+ * The class is annotated with JPA annotations to define the mapping between the class and the database table.
+ * It is used to store and retrieve profile information from the database.
+ *
+ * @author Julian Ertle
+ */
 @Entity
 @Table(name = "profile")
-//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-//@DiscriminatorColumn(name = "discriminator")
 public class Profile {   //@todo javadoc
 
     @Id
