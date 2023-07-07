@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
-import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -105,29 +104,19 @@ public class AnimalService {
                         existingAnimal.setGender((String) value);
                         break;
                     case "picture_one":
-                        String base64StringOne = (String) value;
-                        byte[] pictureDataOne = Base64.getDecoder().decode(base64StringOne);
-                        existingAnimal.setPicture_one(pictureDataOne);
+                        existingAnimal.setPicture_one((String) value);
                         break;
                     case "picture_two":
-                        String base64StringTwo = (String) value;
-                        byte[] pictureDataTwo = Base64.getDecoder().decode(base64StringTwo);
-                        existingAnimal.setPicture_two(pictureDataTwo);
+                        existingAnimal.setPicture_two((String) value);
                         break;
                     case "picture_three":
-                        String base64StringThree = (String) value;
-                        byte[] pictureDataThree = Base64.getDecoder().decode(base64StringThree);
-                        existingAnimal.setPicture_three(pictureDataThree);
+                        existingAnimal.setPicture_three((String) value);
                         break;
                     case "picture_four":
-                        String base64StringFour = (String) value;
-                        byte[] pictureDataFour = Base64.getDecoder().decode(base64StringFour);
-                        existingAnimal.setPicture_four(pictureDataFour);
+                        existingAnimal.setPicture_four((String) value);
                         break;
                     case "picture_five":
-                        String base64StringFive = (String) value;
-                        byte[] pictureDataFive = Base64.getDecoder().decode(base64StringFive);
-                        existingAnimal.setPicture_five(pictureDataFive);
+                        existingAnimal.setPicture_five((String) value);
                         break;
 
                     default:
@@ -209,6 +198,100 @@ public class AnimalService {
             }
         } catch (Exception ex) {
             throw new AnimalServiceException("Error deleting animal: " + ex.getMessage());
+        }
+    }
+
+    /**
+     * This endpoint allows you to filter animals based on the provided filters.
+     * The filters are passed as query parameters in the request URL.
+     * Supported filters include species, color, birthday, illness, breed, profile_id, and gender.
+     * The endpoint retrieves all animals from the animal repository and applies the specified filters.
+     * Animals that match all the provided filters are returned in the response.
+     *
+     * @param filters A map containing the filter criteria as key-value pairs.
+     *                The keys represent the filter names, and the values represent the filter values.
+     *                The supported filter names are species, color, birthday, illness, breed, and gender.
+     * @return ResponseEntity<List<Animal>> containing the list of animals that match the specified filters.
+     *         - If animals are found, it returns a response with HTTP status code 200 (OK)
+     *           and the list of matching animal objects in the response body.
+     *         - If no animals match the specified filters, it returns an empty list in the response body.
+     * @throws AnimalServiceException if an error occurs during the filtering process.
+     *                                The exception message provides details about the error.
+     */
+    @GetMapping("/filter")
+    public ResponseEntity<List<Animal>> filterAnimals(@RequestParam Map<String, String> filters) {
+        try {
+            List<Animal> filteredAnimals = animalRepository.findAll();
+
+            // Apply filters based on the provided parameters
+            for (Map.Entry<String, String> entry : filters.entrySet()) {
+                String filterName = entry.getKey();
+                String filterValue = entry.getValue();
+
+                switch (filterName) {
+                    case "species":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getSpecies().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "color":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getColor().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "age_min":
+                        int minAge = Integer.parseInt(filterValue);
+                        LocalDate minDate = LocalDate.now().minusYears(minAge);
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getBirthday().isBefore(minDate))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "age_max":
+                        int maxAge = Integer.parseInt(filterValue);
+                        LocalDate maxDate = LocalDate.now().minusYears(maxAge).plusDays(1);
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getBirthday().isAfter(maxDate))
+                                .collect(Collectors.toList());
+                        break;
+
+
+                    case "illness":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getIllness().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "breed":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getBreed().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "gender":
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getGender().equalsIgnoreCase(filterValue))
+                                .collect(Collectors.toList());
+                        break;
+
+                    case "profile_id":
+                        Long profileIdFilter = Long.parseLong(filterValue);
+                        filteredAnimals = filteredAnimals.stream()
+                                .filter(animal -> animal.getProfile_id().getProfile_id() == profileIdFilter)
+                                .collect(Collectors.toList());
+                        break;
+
+                    default:
+                        // Ignore unknown filter criteria
+                        break;
+                }
+            }
+
+            return ResponseEntity.ok(filteredAnimals);
+        } catch (Exception ex) {
+            throw new AnimalServiceException("Error filtering animals: " + ex.getMessage());
         }
     }
 }

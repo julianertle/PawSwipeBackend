@@ -2,10 +2,18 @@ package org.example.demo;
 import javax.persistence.*;
 import java.sql.Date;
 
+/**
+ * The {@link Profile} class represents a profile entity.
+ * It is mapped to the "profile" table in the database.
+ * This class contains properties representing various attributes of a profile, such as username, first name,
+ * last name, email, etc.
+ * The class is annotated with JPA annotations to define the mapping between the class and the database table.
+ * It is used to store and retrieve profile information from the database.
+ *
+ * @author Julian Ertle
+ */
 @Entity
 @Table(name = "profile")
-//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-//@DiscriminatorColumn(name = "discriminator")
 public class Profile {   //@todo javadoc
 
     @Id
@@ -26,7 +34,7 @@ public class Profile {   //@todo javadoc
     private int is_admin;
 
     @Column(name = "profile_picture")
-    private byte[] profile_picture;
+    private String profile_picture;
 
     @Column(name = "description")
     private String description;
@@ -65,7 +73,13 @@ public class Profile {   //@todo javadoc
     private String homepage;
 
     @Column(name = "postal_code")
-    private int postal_code;
+    private String postal_code;
+
+    @Column(name = "lat")
+    private double lat;
+
+    @Column(name = "lon")
+    private double lon;
 
     @Column(name = "discriminator") //, insertable = false, updatable = false
     private String discriminator;
@@ -109,11 +123,11 @@ public class Profile {   //@todo javadoc
         this.is_admin = is_admin;
     }
 
-    public byte[] getProfile_picture() {
+    public String getProfile_picture() {
         return profile_picture;
     }
 
-    public void setProfile_picture(byte[] profile_picture) {
+    public void setProfile_picture(String profile_picture) {
         this.profile_picture = profile_picture;
     }
 
@@ -213,11 +227,11 @@ public class Profile {   //@todo javadoc
         this.homepage = homepage;
     }
 
-    public int getPostal_code() {
+    public String getPostal_code() {
         return postal_code;
     }
 
-    public void setPostal_code(int postal_code) {
+    public void setPostal_code(String postal_code) {
         this.postal_code = postal_code;
     }
 
@@ -229,13 +243,31 @@ public class Profile {   //@todo javadoc
         this.discriminator = discriminator;
     }
 
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    public double getLon() {
+        return lon;
+    }
+
+    public void setLon(double lon) {
+        this.lon = lon;
+    }
+
+
     // Constructors
     public Profile() {
     }
 
-    public Profile(String username, byte[] profile_picture, String description, String password, Date creation_date,
+    public Profile(String username, String profile_picture, String description, String password, Date creation_date,
                    String email, Date birthday, String phone_number, String opening_hours,
-                   String street, String country, String city, String street_number, String homepage, int postal_code, String firstname, String lastname) {
+                   String street, String country, String city, String street_number, String homepage, String postal_code,
+                   String firstname, String lastname, double lat, double lon) {
         this.username = username;
         this.profile_picture = profile_picture;
         this.description = description;
@@ -253,5 +285,7 @@ public class Profile {   //@todo javadoc
         this.postal_code = postal_code;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.lat = lat;
+        this.lon = lon;
     }
 }

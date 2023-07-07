@@ -5,10 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.sql.Date;
-import java.util.Base64;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -30,14 +27,19 @@ public class ProfileService {
     /**
      * This endpoint allows you to create a new profile by sending a POST request to "/profile/create".
      * The request body should contain a JSON representation of the profile to be created.
-     * @param profile The profile object to create.
+     * @param profile The profile object to create. The data field creation_date in the request will be ignored
+     *                and replaced by the current date.
      * @return ResponseEntity<Void> indicating the success or failure of the operation.
      */
     @PostMapping("/create")
     public ResponseEntity<Void> createProfile(@RequestBody Profile profile) {
+        // Set the current date as the creation date
+        profile.setCreation_date(new Date(Calendar.getInstance().getTimeInMillis()));
+
         profileRepository.save(profile);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
 
     /**
      * This endpoint allows you to update an existing profile with the specified ID.
@@ -54,7 +56,6 @@ public class ProfileService {
      */
     @PutMapping("/update/{id}")
     public ResponseEntity<Profile> updateProfile(@PathVariable(value = "id") int id, @RequestBody Map<String, Object> updates) {
-
         Profile existingProfile = profileRepository.getById(id);
 
         // Update each field that was specified in the request body
@@ -66,9 +67,7 @@ public class ProfileService {
                     existingProfile.setUsername((String) value);
                     break;
                 case "profile_picture":
-                    String base64String = (String) value;
-                    byte[] pictureData = Base64.getDecoder().decode(base64String);
-                    existingProfile.setProfile_picture(pictureData);
+                    existingProfile.setProfile_picture((String) value);
                     break;
                 case "description":
                     existingProfile.setDescription((String) value);
@@ -107,7 +106,7 @@ public class ProfileService {
                     existingProfile.setHomepage((String) value);
                     break;
                 case "postal_code":
-                    existingProfile.setPostal_code((Integer) value);
+                    existingProfile.setPostal_code((String) value);
                     break;
                 case "discriminator":
                     existingProfile.setDiscriminator((String) value);
@@ -117,6 +116,12 @@ public class ProfileService {
                     break;
                 case "lastname":
                     existingProfile.setLastname((String) value);
+                    break;
+                case "lat":
+                    existingProfile.setLat((Double) value);
+                    break;
+                case "lon":
+                    existingProfile.setLon((Double) value);
                     break;
                 default:
                     // Ignore any unknown fields
@@ -128,6 +133,7 @@ public class ProfileService {
         Profile updatedProfile = profileRepository.save(existingProfile);
         return ResponseEntity.ok(updatedProfile);
     }
+
 
     /**
      * This endpoint allows you to retrieve a profile based on the specified ID.
