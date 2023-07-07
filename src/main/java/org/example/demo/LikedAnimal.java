@@ -7,6 +7,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * The LikedAnimal class represents a mapping entity that represents the liking relationship
+ * between a Profile and an Animal.
+ *
+ * @author Julian Ertle
+ */
 @Entity
 @Table(name = "liked_animals")
 @IdClass(LikedAnimalId.class)
@@ -36,6 +42,4 @@ public class LikedAnimal {
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
-
-    // Add other attributes, getters, and setters
 }

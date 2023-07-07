@@ -6,17 +6,32 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
+/**
+ * The LikedAnimalController class handles HTTP requests related to liked animals.
+ *
+ * @author Julian Ertle
+ */
 @RestController
 @RequestMapping("/liked-animals")
 public class LikedAnimalController {
     private final LikedAnimalService likedAnimalService;
 
+    /**
+     * Constructs a new instance of LikedAnimalController with the provided LikedAnimalService.
+     *
+     * @param likedAnimalService The LikedAnimalService to be used by the controller.
+     */
     @Autowired
     public LikedAnimalController(LikedAnimalService likedAnimalService) {
         this.likedAnimalService = likedAnimalService;
     }
 
+    /**
+     * Handles a POST request to like an animal.
+     *
+     * @param likedAnimalRequest The request object containing the profile ID and animal ID to like.
+     * @return A ResponseEntity with the appropriate HTTP status and a response message.
+     */
     @PostMapping("/like")
     public ResponseEntity<String> likeAnimal(@RequestBody LikedAnimalRequest likedAnimalRequest) {
 
@@ -30,6 +45,12 @@ public class LikedAnimalController {
 
     }
 
+    /**
+     * Handles a DELETE request to dislike an animal.
+     *
+     * @param likedAnimalRequest The request object containing the profile ID and animal ID to dislike.
+     * @return A ResponseEntity with the appropriate HTTP status and a response message.
+     */
     @DeleteMapping("/dislike")
     public ResponseEntity<String> dislikeAnimal(@RequestBody LikedAnimalRequest likedAnimalRequest) {
         try {
@@ -44,6 +65,12 @@ public class LikedAnimalController {
         }
     }
 
+    /**
+     * Handles a GET request to retrieve a list of liked animal IDs for a specific profile.
+     *
+     * @param profileId The ID of the profile to retrieve the liked animal IDs for.
+     * @return A ResponseEntity with the appropriate HTTP status and a list of liked animal IDs.
+     */
     @GetMapping("/list/{profileId}")
     public ResponseEntity<List<Integer>> getLikedAnimalIds(@PathVariable int profileId) {
         try {

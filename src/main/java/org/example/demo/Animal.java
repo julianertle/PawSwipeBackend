@@ -1,14 +1,18 @@
 package org.example.demo;
 
 import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Base64;
+
+/**
+ * Represents an Animal entity in the system.
+ *
+ * @author Julian Ertle
+ */
 
 @Entity
 @Table(name = "animal")
-public class  Animal {    //@todo javadoc
+public class  Animal {
 
     @javax.persistence.Id
     @Id
