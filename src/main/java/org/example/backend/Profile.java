@@ -1,4 +1,4 @@
-package org.example.demo;
+package org.example.backend;
 import javax.persistence.*;
 import java.sql.Date;
 

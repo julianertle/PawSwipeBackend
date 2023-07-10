@@ -1,4 +1,4 @@
-package org.example.demo;
+package org.example.backend;
 
 import org.springframework.data.annotation.Id;
 import javax.persistence.*;

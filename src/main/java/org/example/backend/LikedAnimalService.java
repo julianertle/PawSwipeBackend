@@ -1,4 +1,4 @@
-package org.example.demo;
+package org.example.backend;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

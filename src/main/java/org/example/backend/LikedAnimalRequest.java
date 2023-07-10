@@ -1,4 +1,4 @@
-package org.example.demo;
+package org.example.backend;
 
 /**
  * The LikedAnimalRequest class represents a request object for liking or disliking an animal.

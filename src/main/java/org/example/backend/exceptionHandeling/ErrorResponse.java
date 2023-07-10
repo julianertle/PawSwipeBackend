@@ -1,4 +1,4 @@
-package org.example.demo.exceptionHandeling;
+package org.example.backend.exceptionHandeling;
 
 /**
  * The {@link ErrorResponse} class represents an error response in the RESTful API.

@@ -1,6 +1,6 @@
-package org.example.demo;
+package org.example.backend;
 
-import org.example.demo.exceptionHandeling.AnimalServiceException;
+import org.example.backend.exceptionHandeling.AnimalServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpStatus;

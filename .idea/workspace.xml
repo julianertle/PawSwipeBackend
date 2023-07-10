@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Bug searching">
+    <list default="true" id="b77646c0-1bb9-4263-984a-2950064c7891" name="Changes" comment="Finished all javadoc">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,15 +36,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Python Script" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="database-jertle-update-database-scheme" />
+        <entry key="$PROJECT_DIR$" value="feature-lat-lon-SWP23MTV-70" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,6 +55,14 @@
         <option value="master" />
       </list>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/demo/Animal.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/demo/Application.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/demo/Profile.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/demo/ProfileRepository.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -95,9 +106,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Spring Boot.DemoApplication">
     <configuration name="TestJar" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.example.demo.Application" />
+      <option name="MAIN_CLASS_NAME" value="org.example.backend.Application" />
       <module name="demo.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,6 +140,19 @@
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" />
       <module name="demo.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.backend.Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="demo.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.demo.Application" />
       <extension name="coverage">
         <pattern>
@@ -143,7 +167,7 @@
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <option name="ACTIVE_PROFILES" />
       <module name="demo.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.demo.Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.backend.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,6 +205,27 @@
       <workItem from="1683060347221" duration="5706000" />
       <workItem from="1683066968881" duration="5902000" />
       <workItem from="1683228901069" duration="5904000" />
+      <workItem from="1684867303609" duration="16000" />
+      <workItem from="1684868857809" duration="1011000" />
+      <workItem from="1684871168243" duration="3735000" />
+      <workItem from="1686032742859" duration="7110000" />
+      <workItem from="1686073736709" duration="3013000" />
+      <workItem from="1686216431684" duration="8188000" />
+      <workItem from="1686227347941" duration="6212000" />
+      <workItem from="1686304626267" duration="6396000" />
+      <workItem from="1686313515496" duration="2446000" />
+      <workItem from="1686353930613" duration="1479000" />
+      <workItem from="1686355846265" duration="674000" />
+      <workItem from="1686397236490" duration="953000" />
+      <workItem from="1686483778823" duration="16000" />
+      <workItem from="1686642021419" duration="1823000" />
+      <workItem from="1686665674460" duration="18000" />
+      <workItem from="1687185945596" duration="12327000" />
+      <workItem from="1687217160131" duration="117000" />
+      <workItem from="1687252868380" duration="3274000" />
+      <workItem from="1688253088872" duration="671000" />
+      <workItem from="1688741996747" duration="3590000" />
+      <workItem from="1689006974999" duration="2346000" />
     </task>
     <task id="LOCAL-00001" summary="Started Locally niceeee">
       <created>1681075866320</created>
@@ -266,7 +311,189 @@
       <option name="project" value="LOCAL" />
       <updated>1683062907846</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Improved exception handeling">
+      <created>1684780374248</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684780374248</updated>
+    </task>
+    <task id="LOCAL-00014" summary="minor changes">
+      <created>1684780791848</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684780791848</updated>
+    </task>
+    <task id="LOCAL-00015" summary="the update function for AnimalService now takes base64strings as pictures and stores them">
+      <created>1684784685265</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684784685265</updated>
+    </task>
+    <task id="LOCAL-00016" summary="the update function for ProfileService.java it now  takes base64strings as picture and stores it">
+      <created>1684784829137</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684784829137</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Started adding javadoc to ProfileService.java">
+      <created>1684872939172</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684872939172</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Adding more javadoc to ProfileService.java">
+      <created>1684874896714</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684874896714</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Adding javadoc to AnimalService.java">
+      <created>1684875563338</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684875563338</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Styling code">
+      <created>1684875782587</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684875782587</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Creating a profile now takes the current date as the creation date">
+      <created>1686037442090</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1686037442090</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixxed bug">
+      <created>1686075598597</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1686075598597</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fixed bug">
+      <created>1686075677266</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1686075677266</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added classes with an endpoint for adding a liked animal to a profile">
+      <created>1686231668417</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1686231668417</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Refactoring">
+      <created>1686231712655</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1686231712655</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Exception handling for not existing animal/profiles">
+      <created>1686233005183</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1686233005183</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added the ability to unlike an animal">
+      <created>1686306687935</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1686306687935</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added exception handling if unliking animal fails">
+      <created>1686310092549</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1686310092549</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added endpoint to get all liked animals of a profile">
+      <created>1686314728842</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1686314728843</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Making the requests consistent">
+      <created>1686354901806</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1686354901806</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Making the requests consistent">
+      <created>1686356118059</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1686356118060</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Some simple renaming">
+      <created>1686397375768</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1686397375768</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Changed storing pictures from binary to base64">
+      <created>1687189686683</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1687189686683</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added endpoint /animal/filter">
+      <created>1687193108345</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1687193108345</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Filtering animals by a min/max age is now possible">
+      <created>1687195044062</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1687195044062</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Filtering animals by a profile id is now possible">
+      <created>1687198648204</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1687198648204</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Added lat lon to profile">
+      <created>1687299358239</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1687299358239</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Finished all javadoc">
+      <created>1688744242702</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1688744242702</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,32 +511,55 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rollback here" />
-    <MESSAGE value="Started Locally niceeee" />
-    <MESSAGE value="Get all ids of existing profiles method added" />
-    <MESSAGE value="Get profile from id workds" />
-    <MESSAGE value="Working Server API version" />
-    <MESSAGE value="Added AnimalService" />
-    <MESSAGE value="Added gitignore" />
+    <MESSAGE value="Improved exception handeling" />
+    <MESSAGE value="minor changes" />
+    <MESSAGE value="the update function for AnimalService now takes base64strings as pictures and stores them" />
+    <MESSAGE value="the update function for ProfileService.java it now  takes base64strings as picture and stores it" />
+    <MESSAGE value="Started adding javadoc to ProfileService.java" />
+    <MESSAGE value="Adding more javadoc to ProfileService.java" />
+    <MESSAGE value="Adding javadoc to AnimalService.java" />
+    <MESSAGE value="Styling code" />
+    <MESSAGE value="Creating a profile now takes the current date as the creation date" />
+    <MESSAGE value="Fixxed bug" />
+    <MESSAGE value="Fixed bug" />
+    <MESSAGE value="Added classes with an endpoint for adding a liked animal to a profile" />
     <MESSAGE value="Refactoring" />
-    <MESSAGE value="Added update method to ProfileService" />
-    <MESSAGE value="Made it accessible for the Server" />
-    <MESSAGE value="Changed for local test purpose" />
-    <MESSAGE value="Updated Profile.java and ProfileService.java but has some errors still" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Profile.java and ProfileService.java but has some errors still" />
+    <MESSAGE value="Exception handling for not existing animal/profiles" />
+    <MESSAGE value="Added the ability to unlike an animal" />
+    <MESSAGE value="Added exception handling if unliking animal fails" />
+    <MESSAGE value="Added endpoint to get all liked animals of a profile" />
+    <MESSAGE value="Making the requests consistent" />
+    <MESSAGE value="Some simple renaming" />
+    <MESSAGE value="Changed storing pictures from binary to base64" />
+    <MESSAGE value="Added endpoint /animal/filter" />
+    <MESSAGE value="Filtering animals by a min/max age is now possible" />
+    <MESSAGE value="Filtering animals by a profile id is now possible" />
+    <MESSAGE value="Added lat lon to profile" />
+    <MESSAGE value="Finished all javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished all javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.7/85b25dc4addfd9b2a39471e0bade79b997df81c0/spring-web-5.3.7-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java</url>
           <line>194</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/demo/AnimalService.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/demo/AnimalService.java</url>
+          <line>297</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/demo/ProfileService.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
